@@ -1,12 +1,20 @@
 # -*- coding: utf-8 -*-
+import random
 import logging
 import os
+import threading
 import urllib2
 import wave
+import yaml
+
 
 from flask import Flask, app, request, url_for
-from twilio import twiml
+from twilio import twiml, TwilioRestException
+from twilio.rest import TwilioRestClient
 from google.cloud import speech
+
+
+DIRECTORY_FILE = 'DC_EC_Members.yaml'
 
 
 TWILIO_ACCOUNT_SID = os.environ['TWILIO_ACCOUNT_SID']
@@ -14,6 +22,25 @@ TWILIO_AUTH_TOKEN = os.environ['TWILIO_AUTH_TOKEN']
 
 
 app = Flask(__name__)
+random.seed()
+
+
+name_dir = None
+district_dir = None
+
+
+def _load_directory():
+    global name_dir, district_dir
+    with open(DIRECTORY_FILE, 'r') as f:
+        name_dir = yaml.load(f)
+        district_dir = dict()
+        for name, attr in name_dir.iteritems():
+            district = attr['district']
+            if district in district_dir:
+                district_dir[district].append(name)
+            else:
+                district_dir[district] = [name]
+        app.logger.error("evt=load_directory loaded=%d", len(name_dir))
 
 
 def _recognize(recording_url):
@@ -29,12 +56,17 @@ def _recognize(recording_url):
         client = speech.Client()
         sample = client.sample(encoding=encoding, sample_rate=sample_rate, content=frames)
         results = sample.sync_recognize(max_alternatives=1, language_code='zh-HK')
-        app.logger.info("even=recognize_success recording_url=%s transcript=%s confidence=%f", recording_url, results[0].transcript, results[0].confidence)
+        app.logger.info("even=recognize_success recording_url=%s transcript=%s confidence=%s", recording_url, results[0].transcript, results[0].confidence)
+
         return results[0].transcript
     except Exception as e:
         app.logger.info("evt=recognize_fail sid=%s recording_url=%s err=%s", request.form['CallSid'], recording_url, e)
         raise
     finally:
+        # Clean up
+        t = threading.Thread(target=_delete_recording, args=(recording_url,))
+        t.start()
+
         if content != None:
             content.close()
         if wav != None:
@@ -44,18 +76,32 @@ def _recognize(recording_url):
 def _delete_recording(recording_url):
     sid = recording_url[recording_url.rindex('/') + 1:]
     client = TwilioRestClient(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
-    client.recordings.delete(sid)
-    logging.debug("evt=recording_deleted sid=%s", sid)
+    try:
+        client.recordings.delete(sid)
+        app.logger.info("evt=delete_recording_success sid=%s", sid)
+    except TwilioRestException as e:
+        app.logger.warn("evt=delete_recording_fail sid=%s", sid)
 
 
 def _say(r, message):
     r.say(message, voice='alice', language='zh-HK')
 
 
+def _lookup_name(text):
+    return filter(lambda key: text in key, name_dir)
+
+
+def _lookup_district(text):
+    return filter(lambda key: text in key, district_dir)
+
+
 @app.route('/hello', methods=['POST', 'GET'])
 def hello():
     r = twiml.Response()
-    _say(r, u'歡迎致電前線科技人員，真 Connect。請讀出你既區議會分區')
+    if not request.args.has_key('re'):
+        _say(r, u'你好！呢度係前線科技人員設立嘅 真 WeConnect 熱線。請講出你喺18區入面，係屬於邊一區。或者講其中一個區議員嘅名字。')
+    else:
+        _say(r, u'請講出你區名，或者一個區議員嘅名。')
     r.record(action=url_for('recognize'), maxLength=10, playBeep=False, timeout=3)
     _say(r, u'請讀出你既區議會分區')
     r.record(action=url_for('recognize'), maxLength=10, playBeep=False, timeout=3)
@@ -72,12 +118,41 @@ def recognize():
 
     r = twiml.Response()
     try:
-        result = _recognize(recording_url)
-        _say(r, u'你講既係' + result)
-        r.hangup()
+        text = _recognize(recording_url)
+        name_matches = _lookup_name(text)
+        district_matches = _lookup_district(text)
+        name = None
+        if len(name_matches) > 0:
+            _say(r, u'收到。而家我會幫你打比')
+            name = name_matches[0]
+        elif len(district_matches) > 0:
+            _say(r, u'收到。而家我會幫你打比其中一位屬於特首選委既')
+            _say(r, district_matches[0])
+            _say(r, u'區議員')
+            name = random.choice(district_dir[district_matches[0]])
+
+        if name is not None:
+            attr = name_dir[name]
+            desc = attr.get('desc', name)
+            tel = attr.get('tel')
+
+            _say(r, desc)
+            _say(r, u'咁你就可以盡情同佢connect番夠本啦，記住唔好收線啊！')
+
+            # Debug
+            if tel is not None and type(tel) is list and len(tel) > 0:
+                tel = tel[0]
+            else:
+                tel = u'找不到'
+
+            _say(r, u'佢既電話係：{}'.format(tel))
+            r.hangup()
+        else:
+            _say(r, u'我搵唔到呢個名，請試多次。')
+            r.redirect(url_for('hello', re=1))
     except ValueError:
         _say(r, u'我唔係好知你講乜野，請試多次。')
-        r.redirect(url_for('hello', intro=False))
+        r.redirect(url_for('hello', re=1))
 
     return str(r), 200, {'Content-Type': 'text/xml'}
 
@@ -85,12 +160,14 @@ def recognize():
 @app.errorhandler(500)
 def server_error(e):
     # Log the error and stacktrace.
-    logging.exception('evt=error err=%s', e)
+    app.logger.exception('evt=error err=%s', e)
     r = twiml.Response()
     _say(r, u'唔好意思，系統發生咗啲故障，請遲啲再打過黎啦。')
     r.hangup()
     return str(r), 200, {'Content-Type': 'text/xml'}
 
+
+_load_directory()
 
 if __name__ == '__main__':
     # This is used when running locally. Gunicorn is used to run the
