@@ -23,14 +23,20 @@ Before you can run or deploy the app, you will need to do the following:
 
 ## Run Locally
 
-1. Configure your Twilio settings in the environment variables.
+1. Get credentials used in calling Google APIs.
+
+   ```
+   gcloud auth application-default login
+   ```
+
+2. Configure your Twilio settings in the environment variables.
 
     ```
     export TWILIO_ACCOUNT_SID=[your-twilio-accoun-sid]
     export TWILIO_AUTH_TOKEN=[your-twilio-auth-token]
     ```
 
-2. Create a virtualenv, install dependencies, and run the sample:
+3. Create a virtualenv, install dependencies, and run the sample:
 
    ```
    virtualenv env
@@ -39,13 +45,13 @@ Before you can run or deploy the app, you will need to do the following:
    python main.py
    ```
 
-3. Start ngrok to allow Twilio to connect webhooks on your local server.
+4. Start ngrok to allow Twilio to connect webhooks on your local server.
 
    ```
    ngrok http 8080
    ```
 
-4. Create a number on Twilio, if you haven't already. Configure the voice request URL to be `http://random-name.ngrok.io/`.
+5. Create a number on Twilio, if you haven't already. Configure the voice request URL to be `http://random-name.ngrok.io/`.
 
 ## Deploying (Google App Engine)
 
