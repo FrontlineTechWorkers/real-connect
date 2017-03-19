@@ -119,6 +119,7 @@ def hello():
 
 @app.route('/retry', methods=['POST', 'GET'])
 def retry():
+    r = twiml.Response()
     _say(r, u'請講出你區名，或者一個區議員嘅名。')
     r.record(action=url_for('recognize'), maxLength=10, playBeep=False, timeout=3)
     r.hangup()
