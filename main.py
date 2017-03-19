@@ -51,13 +51,14 @@ def _load_directory():
             else:
                 speech_context.append(district)
                 district_dir[district] = [name]
-        app.logger.error("evt=load_directory loaded=%d", len(name_dir))
     with open(DISTRICTS_FILE, 'r') as f:
         districts = yaml.load(f)
         for district, attr in districts.iteritems():
             for alt in attr['alt']:
                 speech_context.append(alt)
                 district_alias_dir[alt] = district
+    app.logger.error("evt=load_directory names=%d districts=%d district_aliases=%d", len(name_dir), len(district_dir), len(district_alias_dir))
+
 
 def _recognize(recording_url):
     content = None
