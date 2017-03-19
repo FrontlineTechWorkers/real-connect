@@ -30,22 +30,28 @@ random.seed()
 
 name_dir = None
 district_dir = None
+district_alias_dir = None
 speech_context = []
 
 
 def _load_directory():
-    global name_dir, district_dir
+    global name_dir, district_dir, district_alias_dir
     with open(DIRECTORY_FILE, 'r') as f:
         name_dir = yaml.load(f)
         district_dir = dict()
+        district_alias_dir = dict()
         for name, attr in name_dir.iteritems():
             speech_context.append(name)
             district = attr['district']
+            district_alias = attr['district_alias']
             if district in district_dir:
                 district_dir[district].append(name)
             else:
                 speech_context.append(district)
                 district_dir[district] = [name]
+
+            for da in district_alias:
+                district_alias_dir[da] = [district]
         app.logger.error("evt=load_directory loaded=%d", len(name_dir))
 
 
@@ -108,8 +114,12 @@ def _lookup_name(text):
 
 
 def _lookup_district(text):
-    return filter(lambda key: key in text, district_dir)
-
+    if len(filter(lambda key: key in text, district_dir)) > 0:
+        return filter(lambda key: key in text, district_dir)
+    elif text in district_alias_dir:
+        return district_alias_dir[text]
+    else:
+        return []
 
 @app.route('/', methods=['POST', 'GET'])
 def hello():
