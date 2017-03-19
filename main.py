@@ -44,16 +44,15 @@ def _load_directory():
         for name, attr in name_dir.iteritems():
             speech_context.append(name)
             district = attr['district']
-            district_alias = attr['district_alias']
             if district in district_dir:
                 district_dir[district].append(name)
             else:
                 speech_context.append(district)
                 district_dir[district] = [name]
-
-            for da in district_alias:
-                speech_context.append(da)
-                district_alias_dir[da] = [district]
+                if attr.has_key('district_alias'):
+                    for da in attr['district_alias']:
+                        speech_context.append(da)
+                        district_alias_dir[da] = district
         app.logger.error("evt=load_directory loaded=%d", len(name_dir))
 
 
@@ -116,12 +115,9 @@ def _lookup_name(text):
 
 
 def _lookup_district(text):
-    if len(filter(lambda key: key in text, district_dir)) > 0:
-        return filter(lambda key: key in text, district_dir)
-    elif text in district_alias_dir:
-        return district_alias_dir[text]
-    else:
-        return []
+    return filter(lambda key: key in text, district_dir) +\
+        [value for key, value in district_alias_dir.items() if key in text]
+
 
 @app.route('/', methods=['POST', 'GET'])
 def hello():
