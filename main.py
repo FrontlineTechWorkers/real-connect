@@ -51,6 +51,7 @@ def _load_directory():
                 district_dir[district] = [name]
 
             for da in district_alias:
+                speech_context.append(da)
                 district_alias_dir[da] = [district]
         app.logger.error("evt=load_directory loaded=%d", len(name_dir))
 
