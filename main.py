@@ -2,6 +2,7 @@
 import random
 import logging
 import os
+import time
 import threading
 import urllib2
 import wave
@@ -46,8 +47,16 @@ def _load_directory():
 def _recognize(recording_url):
     content = None
     wav = None
+
+
     try:
-        content = urllib2.urlopen(recording_url)
+        for i in range(4):
+            try:
+                content = urllib2.urlopen(recording_url)
+            except HTTPError as e:
+                app.logger.warn("even=fetch_recording_error sid=%s recording_url=%s err=%s", request.form['CallSid'], recording_url, e)
+                time.sleep(0.5)
+
         wav = wave.open(content, 'r')
         encoding = 'LINEAR16'
         sample_rate = wav.getframerate()
@@ -56,7 +65,7 @@ def _recognize(recording_url):
         client = speech.Client()
         sample = client.sample(encoding=encoding, sample_rate=sample_rate, content=frames)
         results = sample.sync_recognize(max_alternatives=1, language_code='zh-HK')
-        app.logger.info("even=recognize_success recording_url=%s transcript=%s confidence=%s", recording_url, results[0].transcript, results[0].confidence)
+        app.logger.info("even=recognize_success sid=%s recording_url=%s transcript=%s confidence=%s", request.form['CallSid'], recording_url, results[0].transcript, results[0].confidence)
 
         return results[0].transcript
     except Exception as e:
@@ -95,19 +104,23 @@ def _lookup_district(text):
     return filter(lambda key: key in text, district_dir)
 
 
-@app.route('/hello', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def hello():
     r = twiml.Response()
-    if not request.args.has_key('re'):
-        _say(r, u'你好！呢度係前線科技人員設立嘅 真 WeConnect 熱線。請講出你喺18區入面，係屬於邊一區。或者講其中一個區議員嘅名字。')
-    else:
-        _say(r, u'請講出你區名，或者一個區議員嘅名。')
+    _say(r, u'你好！呢度係前線科技人員設立嘅 真 WeConnect 熱線。請講出你喺18區入面，係屬於邊一區，或者講一個區議員嘅名字。')
     r.record(action=url_for('recognize'), maxLength=10, playBeep=False, timeout=3)
-    _say(r, u'請讀出你既區議會分區')
+    r.redirect(url_for('retry'))
+    app.logger.info("evt=hello sid=%s from=%s", request.form['CallSid'], request.form['From'])
+
+    return str(r), 200, {'Content-Type': 'text/xml'}
+
+@app.route('/retry', methods=['POST', 'GET'])
+def retry():
+    _say(r, u'請講出你區名，或者一個區議員嘅名。')
     r.record(action=url_for('recognize'), maxLength=10, playBeep=False, timeout=3)
     r.hangup()
 
-    app.logger.info("evt=hello sid=%s from=%s", request.form['CallSid'], request.form['From'])
+    app.logger.info("evt=retry sid=%s", request.form['CallSid'])
 
     return str(r), 200, {'Content-Type': 'text/xml'}
 
@@ -149,10 +162,10 @@ def recognize():
             r.hangup()
         else:
             _say(r, u'我搵唔到呢個名，請試多次。')
-            r.redirect(url_for('hello', re=1))
+            r.redirect(url_for('retry'))
     except ValueError:
         _say(r, u'我唔係好知你講乜野，請試多次。')
-        r.redirect(url_for('hello', re=1))
+        r.redirect(url_for('retry'))
 
     return str(r), 200, {'Content-Type': 'text/xml'}
 
