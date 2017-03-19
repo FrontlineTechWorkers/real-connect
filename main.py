@@ -21,7 +21,8 @@ DIRECTORY_FILE = 'DC_EC_Members.yaml'
 TWILIO_ACCOUNT_SID = os.environ['TWILIO_ACCOUNT_SID']
 TWILIO_AUTH_TOKEN = os.environ['TWILIO_AUTH_TOKEN']
 
-DEBUG_DIAL_NUMBER = os.environ.get('DEBUG_DIAL_NUMBER')
+COUNTRY_PREFIX = os.environ.get('RC_COUNTRY_PREFIX', '+852')
+DEBUG_DIAL_NUMBER = os.environ.get('RC_DEBUG_DIAL_NUMBER')
 
 
 app = Flask(__name__)
@@ -198,7 +199,7 @@ def recognize():
                     tel = DEBUG_DIAL_NUMBER
 
                 _say(r, u'佢既電話係：{}'.format(''.join([' ' + d for d in tel])))
-                r.dial(tel)
+                r.dial(COUNTRY_PREFIX + tel)
             else:
                 _say(r, u'找不到電話號碼')
 
