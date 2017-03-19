@@ -21,6 +21,8 @@ DIRECTORY_FILE = 'DC_EC_Members.yaml'
 TWILIO_ACCOUNT_SID = os.environ['TWILIO_ACCOUNT_SID']
 TWILIO_AUTH_TOKEN = os.environ['TWILIO_AUTH_TOKEN']
 
+DEBUG_DIAL_NUMBER = os.environ.get('DEBUG_DIAL_NUMBER')
+
 
 app = Flask(__name__)
 random.seed()
@@ -110,8 +112,8 @@ def _lookup_district(text):
 @app.route('/', methods=['POST', 'GET'])
 def hello():
     r = twiml.Response()
-    _say(r, u'你好！呢度係前線科技人員設立嘅 真 WeConnect 熱線。請講出你喺18區入面，係屬於邊一區，或者講一個區議員嘅名字。')
-    r.record(action=url_for('accept'), maxLength=10, playBeep=True, timeout=2)
+    _say(r, u'你好！呢度係前線科技人員嘅，真 We Connect 熱線。請問喺十八區入面，你喺屬於邊一區？另外你亦可以講出區議員嘅名字')
+    r.record(action=url_for('accept'), maxLength=6, playBeep=True, timeout=2)
     r.redirect(url_for('retry'))
     app.logger.info("evt=hello sid=%s from=%s", request.form['CallSid'], request.form['From'])
 
@@ -120,8 +122,8 @@ def hello():
 @app.route('/retry', methods=['POST', 'GET'])
 def retry():
     r = twiml.Response()
-    _say(r, u'請講出你區名，或者一個區議員嘅名。')
-    r.record(action=url_for('accept'), maxLength=10, playBeep=True, timeout=2)
+    _say(r, u'請試多次，請讀出你嘅地區或者區議員名稱')
+    r.record(action=url_for('accept'), maxLength=6, playBeep=True, timeout=2)
     r.hangup()
 
     app.logger.info("evt=retry sid=%s", request.form['CallSid'])
@@ -133,7 +135,7 @@ def retry():
 def accept():
     recording_url = request.form['RecordingUrl']
     r = twiml.Response()
-    _say(r, u'收到。')
+    _say(r, u'收到')
     r.redirect(url_for('recognize', RecordingUrl=recording_url))
 
     app.logger.info("evt=accept sid=%s", request.form['CallSid'])
@@ -154,13 +156,15 @@ def recognize():
         name_matches = _lookup_name(text)
         district_matches = _lookup_district(text)
         name = None
+        if u'老母' in text:
+            _say(r, u'講還講唔好講粗口')
         if len(name_matches) > 0:
             _say(r, u'而家我會幫你打比')
             name = name_matches[0]
         elif len(district_matches) > 0:
-            _say(r, u'而家我會幫你打比其中一位屬於特首選委既')
+            _say(r, u'而家我會幫你打比')
             _say(r, district_matches[0])
-            _say(r, u'區議員')
+            _say(r, u'其中一位屬於特首選委既區議員')
             name = random.choice(district_dir[district_matches[0]])
 
         if name is not None:
@@ -169,21 +173,25 @@ def recognize():
             tel = attr.get('tel')
 
             _say(r, desc)
-            _say(r, u'咁你就可以盡情同佢connect番夠本啦，記住唔好收線啊！')
+            _say(r, u'咁你就可以盡情同佢 connect 番夠本啦，記住唔好收線啊！')
 
-            # Debug
             if tel is not None and type(tel) is list and len(tel) > 0:
-                tel = tel[0]
-            else:
-                tel = u'找不到'
+                if DEBUG_DIAL_NUMBER is None:
+                    tel = tel[0]
+                else:
+                    tel = DEBUG_DIAL_NUMBER
 
-            _say(r, u'佢既電話係：{}'.format(tel))
+                _say(r, u'佢既電話係：{}'.format(''.join([' ' + d for d in tel])))
+                r.dial(tel)
+            else:
+                _say(r, u'找不到電話號碼')
+
             r.hangup()
         else:
-            _say(r, u'我搵唔到呢個名，請試多次。')
+            _say(r, u'我搵唔到呢個名')
             r.redirect(url_for('retry'))
     except ValueError:
-        _say(r, u'我唔係好知你講乜野，請試多次。')
+        _say(r, u'我聽唔到你講乜野')
         r.redirect(url_for('retry'))
 
     return str(r), 200, {'Content-Type': 'text/xml'}
@@ -194,7 +202,7 @@ def server_error(e):
     # Log the error and stacktrace.
     app.logger.exception('evt=error err=%s', e)
     r = twiml.Response()
-    _say(r, u'唔好意思，系統發生咗啲故障，請遲啲再打過黎啦。')
+    _say(r, u'唔好意思，系統發生咗啲故障，請遲啲再打過黎啦')
     r.hangup()
     return str(r), 200, {'Content-Type': 'text/xml'}
 
