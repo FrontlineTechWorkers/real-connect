@@ -37,29 +37,6 @@ district_alias_dir = None
 speech_context = []
 
 
-def _load_directory():
-    global name_dir, district_dir, district_alias_dir
-    with open(DIRECTORY_FILE, 'r') as f:
-        name_dir = yaml.load(f)
-        district_dir = dict()
-        district_alias_dir = dict()
-        for name, attr in name_dir.iteritems():
-            speech_context.append(name)
-            district = attr['district']
-            if district in district_dir:
-                district_dir[district].append(name)
-            else:
-                speech_context.append(district)
-                district_dir[district] = [name]
-    with open(DISTRICTS_FILE, 'r') as f:
-        districts = yaml.load(f)
-        for district, attr in districts.iteritems():
-            for alt in attr['alt']:
-                speech_context.append(alt)
-                district_alias_dir[alt] = district
-    app.logger.error("evt=load_directory names=%d districts=%d district_aliases=%d", len(name_dir), len(district_dir), len(district_alias_dir))
-
-
 def _recognize(recording_url):
     content = None
     wav = None
@@ -69,9 +46,11 @@ def _recognize(recording_url):
         for i in range(4):
             try:
                 content = urllib2.urlopen(recording_url)
-            except HTTPError as e:
+            except urllib2.HTTPError as e:
                 app.logger.warn("even=fetch_recording_error sid=%s recording_url=%s err=%s", request.form['CallSid'], recording_url, e)
                 time.sleep(0.5)
+        if content is None:
+            raise ValueError("Fetch recording failed")
 
         wav = wave.open(content, 'r')
         encoding = 'LINEAR16'
@@ -85,7 +64,7 @@ def _recognize(recording_url):
 
         return results[0].transcript
     except Exception as e:
-        app.logger.info("evt=recognize_fail sid=%s recording_url=%s err=%s", request.form['CallSid'], recording_url, e)
+        app.logger.warn("evt=recognize_fail sid=%s recording_url=%s err=%s", request.form['CallSid'], recording_url, e)
         raise
     finally:
         # Clean up
@@ -224,7 +203,40 @@ def server_error(e):
     return str(r), 200, {'Content-Type': 'text/xml'}
 
 
-_load_directory()
+@app.before_first_request
+def setup_logging():
+    if not app.debug:
+        handler = logging.StreamHandler()
+        formatter = logging.Formatter(
+            "[%(asctime)s] {%(pathname)s:%(lineno)d} [%(levelname)s] %(message)s")
+        handler.setFormatter(formatter)
+        app.logger.addHandler(handler)
+        app.logger.setLevel(logging.INFO)
+
+
+@app.before_first_request
+def load_directory():
+    global name_dir, district_dir, district_alias_dir
+    with open(DIRECTORY_FILE, 'r') as f:
+        name_dir = yaml.load(f)
+        district_dir = dict()
+        district_alias_dir = dict()
+        for name, attr in name_dir.iteritems():
+            speech_context.append(name)
+            district = attr['district']
+            if district in district_dir:
+                district_dir[district].append(name)
+            else:
+                speech_context.append(district)
+                district_dir[district] = [name]
+    with open(DISTRICTS_FILE, 'r') as f:
+        districts = yaml.load(f)
+        for district, attr in districts.iteritems():
+            for alt in attr['alt']:
+                speech_context.append(alt)
+                district_alias_dir[alt] = district
+    app.logger.info("evt=load_directory names=%d districts=%d district_aliases=%d", len(name_dir), len(district_dir), len(district_alias_dir))
+
 
 if __name__ == '__main__':
     # This is used when running locally. Gunicorn is used to run the
