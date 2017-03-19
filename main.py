@@ -28,6 +28,7 @@ random.seed()
 
 name_dir = None
 district_dir = None
+speech_context = []
 
 
 def _load_directory():
@@ -36,10 +37,12 @@ def _load_directory():
         name_dir = yaml.load(f)
         district_dir = dict()
         for name, attr in name_dir.iteritems():
+            speech_context.append(name)
             district = attr['district']
             if district in district_dir:
                 district_dir[district].append(name)
             else:
+                speech_context.append(district)
                 district_dir[district] = [name]
         app.logger.error("evt=load_directory loaded=%d", len(name_dir))
 
@@ -64,7 +67,7 @@ def _recognize(recording_url):
 
         client = speech.Client()
         sample = client.sample(encoding=encoding, sample_rate=sample_rate, content=frames)
-        results = sample.sync_recognize(max_alternatives=1, language_code='zh-HK')
+        results = sample.sync_recognize(max_alternatives=1, language_code='zh-HK', speech_context=speech_context)
         app.logger.info("even=recognize_success sid=%s recording_url=%s transcript=%s confidence=%s", request.form['CallSid'], recording_url, results[0].transcript, results[0].confidence)
 
         return results[0].transcript

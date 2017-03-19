@@ -33,7 +33,7 @@ Before you can run or deploy the sample, you will need to do the following:
    ngrok http 8080
    ```
 
-4. Create a number on Twilio, if you haven't already. Configure the voice request URL to be `http://random-name.ngrok.io.`.
+4. Create a number on Twilio, if you haven't already. Configure the voice request URL to be `http://random-name.ngrok.io`.
 
 ## Deploying (Google App Engine)
 
