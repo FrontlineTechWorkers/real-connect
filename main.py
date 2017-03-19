@@ -102,17 +102,17 @@ def _lookup_district(text):
         [value for key, value in district_alias_dir.items() if key in text]
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['POST'])
 def hello():
     r = twiml.Response()
-    _say(r, u'你好！呢度係前線科技人員嘅，真 We Connect 熱線。請問喺十八區入面，你喺屬於邊一區？另外你亦可以講出區議員嘅名字')
+    _say(r, u'你好！呢度係前線科技人員嘅，真 We Connect 熱線。我哋可以幫你轉駁比一位有份選特首嘅當區區議員，等你話直接話佢知，你想邊個做特首。你可以話比我知你住喺邊一區，又或者可以講出你想 connect 嘅區議員名字')
     r.record(action=url_for('accept'), maxLength=6, playBeep=True, timeout=2)
     r.redirect(url_for('retry'))
     app.logger.info("evt=hello sid=%s from=%s", request.form['CallSid'], request.form['From'])
 
     return str(r), 200, {'Content-Type': 'text/xml'}
 
-@app.route('/retry', methods=['POST', 'GET'])
+@app.route('/retry', methods=['POST'])
 def retry():
     r = twiml.Response()
     _say(r, u'請試多次，請讀出你嘅地區或者區議員名稱')
@@ -124,7 +124,7 @@ def retry():
     return str(r), 200, {'Content-Type': 'text/xml'}
 
 
-@app.route('/accept', methods=['POST', 'GET'])
+@app.route('/accept', methods=['POST'])
 def accept():
     recording_url = request.form['RecordingUrl']
     r = twiml.Response()
@@ -136,7 +136,7 @@ def accept():
     return str(r), 200, {'Content-Type': 'text/xml'}
 
 
-@app.route('/recognize', methods=['POST', 'GET'])
+@app.route('/recognize', methods=['POST'])
 def recognize():
     if 'RecordingUrl' in request.args:
         recording_url = request.args['RecordingUrl']
@@ -149,16 +149,18 @@ def recognize():
         name_matches = _lookup_name(text)
         district_matches = _lookup_district(text)
         name = None
+
         if u'老母' in text:
             _say(r, u'講還講唔好講粗口')
+
         if len(name_matches) > 0:
             name = name_matches[0]
-            app.logger.info("evt=recognize_name sid=%s name=%s", request.form['CallSid'], name)
+            app.logger.info("evt=match_name sid=%s name=%s", request.form['CallSid'], name)
             _say(r, u'而家我會幫你打比')
         elif len(district_matches) > 0:
             district = district_matches[0]
             name = random.choice(district_dir[district])
-            app.logger.info("evt=recognize_district sid=%s district=%s name=%s", request.form['CallSid'], district, name)
+            app.logger.info("evt=match_district sid=%s district=%s name=%s", request.form['CallSid'], district, name)
             _say(r, u'而家我會幫你打比')
             _say(r, district)
             _say(r, u'其中一位屬於特首選委既區議員')
@@ -169,7 +171,7 @@ def recognize():
             tel = attr.get('tel')
 
             _say(r, desc)
-            _say(r, u'咁你就可以盡情同佢 connect 番夠本啦，記住唔好收線啊！')
+            _say(r, u'咁你就可以盡情同佢 connect 番夠本啦，記住唔好收線啊')
 
             if tel is not None and type(tel) is list and len(tel) > 0:
                 if DEBUG_DIAL_NUMBER is None:
@@ -178,18 +180,33 @@ def recognize():
                     tel = DEBUG_DIAL_NUMBER
 
                 _say(r, u'佢既電話係：{}'.format(''.join([' ' + d for d in tel])))
-                r.dial(COUNTRY_PREFIX + tel)
+                tel_with_prefix = COUNTRY_PREFIX + tel
+                app.logger.info("evt=dial_start sid=%s name=%s tel=%s", request.form['CallSid'], name, tel_with_prefix)
+                r.dial(tel_with_prefix, action=url_for('goodbye'))
             else:
-                _say(r, u'找不到電話號碼')
+                app.logger.info("evt=tel_not_found sid=%s name=%s", request.form['CallSid'], name)
+                _say(r, u'唔好意思，我地搵唔到佢嘅電話號碼')
+                r.redirect(url_for('retry'))
 
             r.hangup()
         else:
-            _say(r, u'我搵唔到呢個名')
+            app.logger.warn("evt=match_miss sid=%s text=%s", request.form['CallSid'], text)
+            _say(r, u'我搵唔到呢個地方')
             r.redirect(url_for('retry'))
     except ValueError:
         _say(r, u'我聽唔到你講乜野')
         r.redirect(url_for('retry'))
 
+    return str(r), 200, {'Content-Type': 'text/xml'}
+
+
+@app.route('/goodbye', methods=['POST'])
+def goodbye():
+    status = request.form['DialCallStatus']
+    duration = request.form['DialCallDuration']
+    app.logger.info("evt=dial_end sid=%s status=%s duration=%s", request.form['CallSid'], status, duration)
+    r = twiml.Response()
+    r.hangup()
     return str(r), 200, {'Content-Type': 'text/xml'}
 
 
