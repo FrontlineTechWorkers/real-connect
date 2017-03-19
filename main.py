@@ -155,7 +155,7 @@ def recognize():
         district_matches = _lookup_district(text)
         name = None
         if len(name_matches) > 0:
-            _say(r, u'。而家我會幫你打比')
+            _say(r, u'而家我會幫你打比')
             name = name_matches[0]
         elif len(district_matches) > 0:
             _say(r, u'而家我會幫你打比其中一位屬於特首選委既')
