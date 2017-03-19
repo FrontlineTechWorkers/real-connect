@@ -135,7 +135,7 @@ def retry():
 def accept():
     recording_url = request.form['RecordingUrl']
     r = twiml.Response()
-    _say(r, u'收到')
+    _say(r, u'等等')
     r.redirect(url_for('recognize', RecordingUrl=recording_url))
 
     app.logger.info("evt=accept sid=%s", request.form['CallSid'])
@@ -159,13 +159,16 @@ def recognize():
         if u'老母' in text:
             _say(r, u'講還講唔好講粗口')
         if len(name_matches) > 0:
-            _say(r, u'而家我會幫你打比')
             name = name_matches[0]
-        elif len(district_matches) > 0:
+            app.logger.info("evt=recognize_name sid=%s name=%s", request.form['CallSid'], name)
             _say(r, u'而家我會幫你打比')
-            _say(r, district_matches[0])
+        elif len(district_matches) > 0:
+            district = district_matches[0]
+            name = random.choice(district_dir[district])
+            app.logger.info("evt=recognize_district sid=%s district=%s name=%s", request.form['CallSid'], district, name)
+            _say(r, u'而家我會幫你打比')
+            _say(r, district)
             _say(r, u'其中一位屬於特首選委既區議員')
-            name = random.choice(district_dir[district_matches[0]])
 
         if name is not None:
             attr = name_dir[name]
