@@ -88,11 +88,11 @@ def _say(r, message):
 
 
 def _lookup_name(text):
-    return filter(lambda key: text in key, name_dir)
+    return filter(lambda key: key in text, name_dir)
 
 
 def _lookup_district(text):
-    return filter(lambda key: text in key, district_dir)
+    return filter(lambda key: key in text, district_dir)
 
 
 @app.route('/hello', methods=['POST', 'GET'])
