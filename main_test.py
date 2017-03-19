@@ -1,15 +1,17 @@
-import pytest
 
+import os
+import unittest
 
-@pytest.fixture
-def app():
-    import main
-    main.app.testing = True
-    return main.app.test_client()
+class MainTestCase(unittest.TestCase):
 
+    def setUp(self):
+        os.environ["TWILIO_ACCOUNT_SID"] = "TEST"
+        os.environ["TWILIO_AUTH_TOKEN"] = "TEST"
+        import main
+        self.app = main.app.test_client()
 
-def test_recognize(app):
-    r = app.post('/recognize',
-                 recording_url='file://./sample.wav')
+    def test_hello(self):
+        rv = self.app.get('/')
 
-    assert r.status_code == 200
+if __name__ == '__main__':
+    unittest.main()
