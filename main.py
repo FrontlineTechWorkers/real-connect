@@ -16,10 +16,12 @@ from google.cloud import speech
 
 
 DIRECTORY_FILE = 'DC_EC_Members.yaml'
+DISTRICTS_FILE = 'DC_Districts.yaml'
 
 
 TWILIO_ACCOUNT_SID = os.environ['TWILIO_ACCOUNT_SID']
 TWILIO_AUTH_TOKEN = os.environ['TWILIO_AUTH_TOKEN']
+
 
 COUNTRY_PREFIX = os.environ.get('RC_COUNTRY_PREFIX', '+852')
 DEBUG_DIAL_NUMBER = os.environ.get('RC_DEBUG_DIAL_NUMBER')
@@ -49,12 +51,13 @@ def _load_directory():
             else:
                 speech_context.append(district)
                 district_dir[district] = [name]
-                if attr.has_key('district_alias'):
-                    for da in attr['district_alias']:
-                        speech_context.append(da)
-                        district_alias_dir[da] = district
         app.logger.error("evt=load_directory loaded=%d", len(name_dir))
-
+    with open(DISTRICTS_FILE, 'r') as f:
+        districts = yaml.load(f)
+        for district, attr in districts.iteritems():
+            for alt in attr['alt']:
+                speech_context.append(alt)
+                district_alias_dir[alt] = district
 
 def _recognize(recording_url):
     content = None
