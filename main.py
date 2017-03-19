@@ -96,6 +96,8 @@ def _delete_recording(recording_url):
     except TwilioRestException as e:
         app.logger.warn("evt=delete_recording_fail sid=%s", sid)
 
+def _play(r, url):
+    r.play(url)
 
 def _say(r, message):
     r.say(message, voice='alice', language='zh-HK')
