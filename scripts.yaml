@@ -1,0 +1,36 @@
+HELLO:
+  text: 你好！呢度係前線科技人員嘅，真 We Connect 熱線。我哋可以幫你轉駁比一位有份選特首嘅當區區議員，等你話直接話佢知，你想邊個做特首。你可以話比我知你住喺邊一區，又或者可以講出你想 connect 嘅區議員名字
+  audio: a2.wav
+TRY_AGAIN:
+  text: 請試多次，請讀出你嘅地區或者區議員名稱
+  audio: a4.wav
+PLEASE_WAIT:
+  text: 等等
+  audio: a5.wav
+NO_MOTHER:
+  text: 講還講唔好講粗口
+  audio: a6.wav
+WILL_CALL:
+  text: 而家我會幫你打比
+  audio: a7.wav
+FROM_DISTRICT:
+  text: 其中一位屬於特首選委既區議員
+  audio: a8.wav
+DONT_HANG_UP:
+  text: 咁你就可以盡情同佢 connect 番夠本啦，記住唔好收線啊
+  audio: a9.wav
+THE_NUMBER_IS:
+  text: 佢既電話係
+  audio: a10.wav
+TEL_NOT_FOUND:
+  text: 唔好意思，我地搵唔到佢嘅電話號碼
+  audio: a11.wav
+PLACE_NOT_FOUND:
+  text: 我搵唔到呢個地方
+  audio: a12.wav
+CANNOT_HEAR:
+  text: 我聽唔到你講乜野
+  audio: a13.wav
+ERROR_OCCURRED:
+  text: 唔好意思，系統發生咗啲故障，請遲啲再打過黎啦
+  audio: a14.wav
