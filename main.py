@@ -243,7 +243,7 @@ def setup_logging():
 
 @app.before_first_request
 def load_directory():
-    global name_dir, district_dir, district_alias_dir
+    global name_dir, district_dir, district_alias_dir, speech_context
     with open(DIRECTORY_FILE, 'r') as f:
         name_dir = yaml.load(f)
         district_dir = dict()
@@ -262,6 +262,7 @@ def load_directory():
             for alt in attr['alt']:
                 speech_context.append(alt)
                 district_alias_dir[alt] = district
+    speech_context = speech_context[:500]
     app.logger.info("evt=load_directory names=%d districts=%d district_aliases=%d", len(name_dir), len(district_dir), len(district_alias_dir))
 
 
