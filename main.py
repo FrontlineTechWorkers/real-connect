@@ -48,7 +48,7 @@ def _recognize(recording_url):
             try:
                 content = urllib2.urlopen(recording_url)
             except urllib2.HTTPError as e:
-                app.logger.warn("even=fetch_recording_error sid=%s recording_url=%s err=%s", request.form['CallSid'], recording_url, e)
+                app.logger.warn("evt=fetch_recording_error sid=%s recording_url=%s err=%s", request.form['CallSid'], recording_url, e)
                 time.sleep(0.5)
         if content is None:
             raise ValueError("Fetch recording failed")
@@ -61,7 +61,7 @@ def _recognize(recording_url):
         client = speech.Client()
         sample = client.sample(encoding=encoding, sample_rate=sample_rate, content=frames)
         results = sample.sync_recognize(max_alternatives=1, language_code='zh-HK', speech_context=speech_context)
-        app.logger.info("even=recognize_success sid=%s recording_url=%s transcript=%s confidence=%s", request.form['CallSid'], recording_url, results[0].transcript, results[0].confidence)
+        app.logger.info("evt=recognize_success sid=%s recording_url=%s transcript=%s confidence=%s", request.form['CallSid'], recording_url, results[0].transcript, results[0].confidence)
 
         return results[0].transcript
     except Exception as e:
