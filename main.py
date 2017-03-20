@@ -17,6 +17,7 @@ from google.cloud import speech
 
 DIRECTORY_FILE = 'DC_EC_Members.yaml'
 DISTRICTS_FILE = 'DC_Districts.yaml'
+SCRIPT_FILE = 'scripts.yaml'
 
 
 TWILIO_ACCOUNT_SID = os.environ['TWILIO_ACCOUNT_SID']
@@ -34,13 +35,13 @@ random.seed()
 name_dir = None
 district_dir = None
 district_alias_dir = None
+script_map = dict()
 speech_context = []
 
 
 def _recognize(recording_url):
     content = None
     wav = None
-
 
     try:
         for i in range(4):
@@ -86,12 +87,19 @@ def _delete_recording(recording_url):
     except TwilioRestException as e:
         app.logger.warn("evt=delete_recording_fail sid=%s", sid)
 
-def _play(r, url):
-    r.play(url)
 
 def _say(r, message):
-    r.say(message, voice='alice', language='zh-HK')
-
+    if message in script_map:
+        script_info = script_map[message]
+        if 'audio' in script_info:
+            r.play(url_for('static', filename='audios/' + script_info['audio']))
+        elif 'text' in script_info:
+            r.say(script_info['text'], voice='alice', language='zh-HK')
+        else:
+            app.logger.warn("evt=script_missing message=%s", message)
+            r.say(message, voice='alice', language='zh-HK')
+    else:
+        r.say(message, voice='alice', language='zh-HK')
 
 def _lookup_name(text):
     return filter(lambda key: key in text, name_dir)
@@ -105,7 +113,7 @@ def _lookup_district(text):
 @app.route('/', methods=['POST'])
 def hello():
     r = twiml.Response()
-    _say(r, u'你好！呢度係前線科技人員嘅，真 We Connect 熱線。我哋可以幫你轉駁比一位有份選特首嘅當區區議員，等你話直接話佢知，你想邊個做特首。你可以話比我知你住喺邊一區，又或者可以講出你想 connect 嘅區議員名字')
+    _say(r, u'HELLO')
     r.record(action=url_for('accept'), maxLength=6, playBeep=True, timeout=2)
     r.redirect(url_for('retry'))
     app.logger.info("evt=hello sid=%s from=%s", request.form['CallSid'], request.form['From'])
@@ -116,7 +124,7 @@ def hello():
 @app.route('/retry', methods=['POST'])
 def retry():
     r = twiml.Response()
-    _say(r, u'請試多次，請讀出你嘅地區或者區議員名稱')
+    _say(r, 'TRY_AGAIN')
     r.record(action=url_for('accept'), maxLength=6, playBeep=True, timeout=2)
     r.hangup()
 
@@ -129,7 +137,7 @@ def retry():
 def accept():
     recording_url = request.form['RecordingUrl']
     r = twiml.Response()
-    _say(r, u'等等')
+    _say(r, 'PLEASE_WAIT')
     r.redirect(url_for('recognize', RecordingUrl=recording_url))
 
     app.logger.info("evt=accept sid=%s", request.form['CallSid'])
@@ -152,19 +160,19 @@ def recognize():
         name = None
 
         if u'老母' in text:
-            _say(r, u'講還講唔好講粗口')
+            _say(r, 'NO_MOTHER')
 
         if len(name_matches) > 0:
             name = name_matches[0]
             app.logger.info("evt=match_name sid=%s name=%s", request.form['CallSid'], name)
-            _say(r, u'而家我會幫你打比')
+            _say(r, 'WILL_CALL')
         elif len(district_matches) > 0:
             district = district_matches[0]
             name = random.choice(district_dir[district])
             app.logger.info("evt=match_district sid=%s district=%s name=%s", request.form['CallSid'], district, name)
-            _say(r, u'而家我會幫你打比')
+            _say(r, 'WILL_CALL')
             _say(r, district)
-            _say(r, u'其中一位屬於特首選委既區議員')
+            _say(r, 'FROM_DISTRICT')
 
         if name is not None:
             attr = name_dir[name]
@@ -172,7 +180,7 @@ def recognize():
             tel = attr.get('tel')
 
             _say(r, desc)
-            _say(r, u'咁你就可以盡情同佢 connect 番夠本啦，記住唔好收線啊')
+            _say(r, 'DONT_HANG_UP')
 
             if tel is not None and type(tel) is list and len(tel) > 0:
                 if DEBUG_DIAL_NUMBER is None:
@@ -180,22 +188,23 @@ def recognize():
                 else:
                     tel = DEBUG_DIAL_NUMBER
 
-                _say(r, u'佢既電話係：{}'.format(''.join([' ' + d for d in tel])))
+                _say(r, 'THE_NUMBER_IS')
+                _say(r, ''.join([' ' + d for d in tel]))
                 tel_with_prefix = COUNTRY_PREFIX + tel
                 app.logger.info("evt=dial_start sid=%s name=%s tel=%s", request.form['CallSid'], name, tel_with_prefix)
                 r.dial(tel_with_prefix, action=url_for('goodbye'))
             else:
                 app.logger.info("evt=tel_not_found sid=%s name=%s", request.form['CallSid'], name)
-                _say(r, u'唔好意思，我地搵唔到佢嘅電話號碼')
+                _say(r, 'TEL_NOT_FOUND')
                 r.redirect(url_for('retry'))
 
             r.hangup()
         else:
             app.logger.warn("evt=match_miss sid=%s text=%s", request.form['CallSid'], text)
-            _say(r, u'我搵唔到呢個地方')
+            _say(r, 'PLACE_NOT_FOUND')
             r.redirect(url_for('retry'))
     except ValueError:
-        _say(r, u'我聽唔到你講乜野')
+        _say(r, 'CANNOT_HEAR')
         r.redirect(url_for('retry'))
 
     return str(r), 200, {'Content-Type': 'text/xml'}
@@ -216,7 +225,7 @@ def server_error(e):
     # Log the error and stacktrace.
     app.logger.exception('evt=error err=%s', e)
     r = twiml.Response()
-    _say(r, u'唔好意思，系統發生咗啲故障，請遲啲再打過黎啦')
+    _say(r, 'ERROR_OCCURRED')
     r.hangup()
     return str(r), 200, {'Content-Type': 'text/xml'}
 
@@ -255,6 +264,13 @@ def load_directory():
                 district_alias_dir[alt] = district
     app.logger.info("evt=load_directory names=%d districts=%d district_aliases=%d", len(name_dir), len(district_dir), len(district_alias_dir))
 
+
+@app.before_first_request
+def load_script():
+    global script_map
+    with open(SCRIPT_FILE, 'r') as f:
+        script_map = yaml.load(f)
+    app.logger.info("evt=load_script scripts=%d", len(script_map))
 
 if __name__ == '__main__':
     # This is used when running locally. Gunicorn is used to run the
