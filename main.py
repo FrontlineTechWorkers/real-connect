@@ -242,6 +242,14 @@ def setup_logging():
 
 
 @app.before_first_request
+def load_script():
+    global script_map
+    with open(SCRIPT_FILE, 'r') as f:
+        script_map = yaml.load(f)
+    app.logger.info("evt=load_script scripts=%d", len(script_map))
+
+
+@app.before_first_request
 def load_directory():
     global name_dir, district_dir, district_alias_dir, speech_context
     with open(DIRECTORY_FILE, 'r') as f:
@@ -265,13 +273,6 @@ def load_directory():
     speech_context = speech_context[:500]
     app.logger.info("evt=load_directory names=%d districts=%d district_aliases=%d", len(name_dir), len(district_dir), len(district_alias_dir))
 
-
-@app.before_first_request
-def load_script():
-    global script_map
-    with open(SCRIPT_FILE, 'r') as f:
-        script_map = yaml.load(f)
-    app.logger.info("evt=load_script scripts=%d", len(script_map))
 
 if __name__ == '__main__':
     # This is used when running locally. Gunicorn is used to run the
