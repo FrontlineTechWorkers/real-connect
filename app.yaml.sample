@@ -2,6 +2,11 @@ runtime: python
 env: flex
 entrypoint: gunicorn -b :$PORT main:app
 
-env_variables:
-    TWILIO_ACCOUNT_SID: your-account-sid
-    TWILIO_AUTH_TOKEN: your-auth-token
+automatic_scaling:
+    min_num_instances: 3
+
+# INSERT YOUR SECRETS BELOW
+
+# env_variables:
+#     TWILIO_ACCOUNT_SID: your-account-sid
+#     TWILIO_AUTH_TOKEN: your-auth-token

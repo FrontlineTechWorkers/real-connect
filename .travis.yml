@@ -1,4 +1,19 @@
 dist: trusty
 language: python
+env:
+  global:
+    - GAE_VERSION=build$TRAVIS_BUILD_NUMBER-${TRAVIS_COMMIT::8}
 install: pip install -r requirements.txt
 script: python main_test.py
+before_deploy:
+- openssl aes-256-cbc -K $encrypted_244181f4f846_key -iv $encrypted_244181f4f846_iv -in secrets.tar.enc -out secrets.tar -d
+- tar xvf secrets.tar
+- cp app.yaml.sample app.yaml
+- cat app.yaml.secrets >> app.yaml
+- rm app.yaml.secrets secrets.tar
+deploy:
+  provider: gae
+  project: real-connect
+  skip_cleanup: true
+  version: $GAE_VERSION
+  on: live

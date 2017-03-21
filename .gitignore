@@ -90,3 +90,5 @@ ENV/
 
 # Google App Engine
 app.yaml
+app.yaml.secrets
+service-account.json
