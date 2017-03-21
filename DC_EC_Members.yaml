@@ -4,1054 +4,1005 @@
   tel: ['26230808','23920980','68993208']
   email: ['dywd.dc@gmail.com','davidyip.dc@gmail.com']
   addr: ['香港西環卑路乍街5號南雄大廈地下5FA舖']
-  district_alias: ['堅尼地城','中半山']
 '陳學鋒':
   district: '中西區'
   desc: '民建聯嘅陳學鋒'
   tel: ['28166881','28166313','60993800']
   email: ['cwdca06@gmail.com']
   addr: ['香港堅尼地城加多近街52-60號西環邨東苑台1樓101室']
-  district_alias: ['堅尼地城','中半山']
 '陳捷貴':
   district: '中西區'
   desc: '報稱獨立嘅陳捷貴'
   tel: ['28589122','24111041','90269476']
   email: ['sckchanjp@yahoo.com.hk']
   addr: ['香港般咸道78號寧養臺地下B-3舖']
-  district_alias: ['堅尼地城','中半山']
 '陳財喜':
   district: '中西區'
   desc: '報稱獨立嘅陳財喜'
   tel: ['23454908','25593549','92612138']
   email: ['chanchoihi@hotmail.com']
   addr: ['香港干諾道西188號香港商業中心29樓2908室']
-  district_alias: ['堅尼地城','中半山']
 '張國鈞':
   district: '中西區'
   desc: '民建聯嘅張國鈞'
   tel: ['28720177','28720077','63530173','86-18420021824(Whatsapp)']
   email: ['dabcw.h.cheung@gmail.com']
   addr: ['香港西環山市街2號B1舖']
-  district_alias: ['堅尼地城','中半山']
 '盧懿杏':
   district: '中西區'
   desc: '民建聯嘅盧懿杏'
   tel: ['28032400','28576787','90822837']
   email: ['lyhoffice@yahoo.com.hk']
   addr: ['香港西營盤德輔道西343號均益大廈第二期地下28號A舖']
-  district_alias: ['堅尼地城','中半山']
+'許智峯':
+  district: '中西區'
+  desc: '民主黨嘅許智峯'
+  tel: ['34892064','97226032']
+  email: ['huichifung@gmail.com ']
+  addr: ['香港中環閣麟街10-16號致發大廈703室']
+'張國鈞':
+  district: '中西區'
+  desc: '民建聯嘅張國鈞'
+  tel: ['28720177','28720077','63530173']
+  email: ['dabcw.h.cheung@gmail.com']
+  addr: ['香港西環山市街2號B1舖']
 '吳錦津':
   district: '灣仔'
   desc: '報稱獨立嘅吳錦津'
   tel: ['25749687']
   email: ['stephennkc@gmail.com']
   addr: ['香港跑馬地毓秀街3號地下','香港跑馬地綿發街16號1樓']
-  district_alias: ['天后','大坑','銅鑼灣']
 '周潔冰':
   district: '灣仔'
   desc: '民建聯嘅周潔冰'
   tel: ['25198080','69389363']
   email: ['info@jenniferchow.org']
   addr: ['香港天后電氣道108號冠貿商業大廈1樓']
-  district_alias: ['天后','大坑','銅鑼灣']
 '李均頤':
   district: '灣仔'
   desc: '民建聯嘅李均頤'
   tel: ['28660901','91334387']
   email: ['kwunyee1@yahoo.com.hk']
   addr: ['香港灣仔莊士敦道68號互信大廈8字樓A室']
-  district_alias: ['天后','大坑','銅鑼灣']
 '李碧儀':
   district: '灣仔'
   desc: '報稱獨立嘅李碧儀'
   tel: ['28653300','28653301']
   email: ['pyleepeggy@gmail.com']
   addr: ['香港灣仔譚臣道8號威利商業大廈13A']
-  district_alias: ['天后','大坑','銅鑼灣']
+'謝偉俊':
+  district: '灣仔'
+  desc: '報稱獨立嘅謝偉俊'
+  tel: ['25755889']
+  email: ['info@tsewaichun.org']
+  addr: ['香港銅鑼灣羅素街50-52號德發大廈6樓B室']
 '朱慶虹':
   district: '南區'
   desc: '報稱獨立嘅朱慶虹'
   tel: ['28755523']
   email: ['chchu1@netvigator.com']
   addr: ['香港薄扶林置富花園第10座地下A舖']
-  district_alias: ['赤柱','香港仔','鴨脷洲']
 '陳富明':
   district: '南區'
   desc: '報稱獨立嘅陳富明'
   tel: ['25387788','25387738','92710837']
   email: ['chanfuming@gmail.com']
   addr: ['香港仔田灣邨田麗樓8號地下']
-  district_alias: ['赤柱','香港仔','鴨脷洲']
 '陳家珮':
   district: '南區'
   desc: '新民黨嘅陳家珮'
   tel: ['25183860','25183897','97463456']
   email: ['judychan.office@gmail.com']
   addr: ['香港鴨脷洲海怡半島海怡東商場地下G59號舖']
-  district_alias: ['赤柱','香港仔','鴨脷洲']
 '林啟暉':
   district: '南區'
   desc: '報稱獨立嘅林啟暉'
   tel: ['28710331','91387889']
   email: ['councilor_kflam@yahoo.com.hk']
   addr: ['香港鴨脷洲海怡半島海怡東商場305室']
-  district_alias: ['赤柱','香港仔','鴨脷洲']
 '林玉珍':
   district: '南區'
   desc: '報稱獨立嘅林玉珍'
   tel: ['25532808','25432003']
   email: ['adalamyc@biznetvigator.com']
   addr: ['香港鴨脷洲邨利澤樓32號地下']
-  district_alias: ['赤柱','香港仔','鴨脷洲']
 '黃建彬':
   district: '東區'
   desc: '民建聯嘅黃建彬'
   tel: ['25906083','93059918']
   email: ['hkkbw@netvigator.com']
   addr: ['香港鰂魚涌英皇道1026號海景樓1','FD6室']
-  district_alias: ['筲箕灣','鰂魚涌','柴灣']
 '趙資強':
   district: '東區'
   desc: '工聯會嘅趙資強'
   tel: ['25683883','25683442']
   email: ['hk92619898@yahoo.com.hk']
   addr: ['香港筲箕灣耀東邨耀樂樓2號地下']
-  district_alias: ['筲箕灣','鰂魚涌','柴灣']
 '鄭志成':
   district: '東區'
   desc: '民建聯嘅鄭志成'
   tel: ['25628003','66252020','68564717','68485745']
   email: ['garycscheng@yahoo.com.hk']
   addr: ['香港鰂魚涌英皇道770號模範邨民康樓地下OT1號舖香港北角馬寶道62-76號華禮商場1字26號鋪']
-  district_alias: ['筲箕灣','鰂魚涌','柴灣']
 '蔡素玉':
   district: '東區'
   desc: '民建聯嘅蔡素玉'
   tel: ['21140008','21140707','98011114']
   email: ['choysoyuk@gmail.com']
   addr: ['香港北角錦屏街70號鴻福大廈地下H舖']
-  district_alias: ['筲箕灣','鰂魚涌','柴灣']
 '洪連杉':
   district: '東區'
   desc: '民建聯嘅洪連杉'
   tel: ['35425227','73882553']
   email: ['stanleyhlc@yahoo.com.hk']
   addr: ['香港北角北角道10號亞太廣場902室']
-  district_alias: ['筲箕灣','鰂魚涌','柴灣']
 '龔栢祥':
   district: '東區'
   desc: '民建聯嘅龔栢祥'
   tel: ['25153211','78863338(Pager)']
   email: ['pckung55@yahoo.com']
   addr: ['香港柴灣環翠邨喜翠樓113號地下']
-  district_alias: ['筲箕灣','鰂魚涌','柴灣']
 '劉慶揚':
   district: '東區'
   desc: '民建聯嘅劉慶揚'
   tel: ['28980806','98511398']
   email: ['hylauoffice@gmail.com']
   addr: ['香港柴灣興民邨興民商場409號舖']
-  district_alias: ['筲箕灣','鰂魚涌','柴灣']
 '李鎮強':
   district: '東區'
   desc: '自由黨嘅李鎮強'
   tel: ['35681181','53137537','98585080']
   email: ['tsuitak.dc@gmail.com']
   addr: ['香港柴灣道345號金源洋樓商場1樓13及16號舖']
-  district_alias: ['筲箕灣','鰂魚涌','柴灣']
 '顏尊廉':
   district: '東區'
   desc: '民建聯嘅顏尊廉'
   tel: ['31954423','61297878','31954493','31954497','31954221']
   email: ['ngan61297878@yahoo.com.hk']
   addr: ['香港筲箕灣愛東邨愛旭樓33-34號地下']
-  district_alias: ['筲箕灣','鰂魚涌','柴灣']
 '邵家輝':
   district: '東區'
   desc: '自由黨嘅邵家輝'
   tel: ['25032188','98340686','96316970']
   email: ['braemarhill.dc@gmail.com']
   addr: ['香港北角寶馬山道45號賽西湖商場3號舖']
-  district_alias: ['筲箕灣','鰂魚涌','柴灣']
 '黃健興':
   district: '東區'
   desc: '報稱獨立嘅黃健興'
   tel: ['36900090']
   email: ['albert.kinhing@gmail.com']
   addr: ['香港柴灣新業街8號八號商業廣場3105室']
-  district_alias: ['筲箕灣','鰂魚涌','柴灣']
 '王國興':
   district: '東區'
   desc: '工聯會嘅王國興'
   tel: ['29659900']
   email: ['Ah_wongkh@yahoo.com.hk']
   addr: ['香港柴灣小西灣邨瑞益樓地下14號']
-  district_alias: ['筲箕灣','鰂魚涌','柴灣']
+'郭偉強':
+  district: '東區'
+  desc: '工聯會嘅郭偉強'
+  tel: ['29042800']
+  email: ['kwok_aron@yahoo.com.hk']
+  addr: ['香港北角渣華道8號威邦商業中心1510室']
 '陳振彬':
   district: '觀塘'
   desc: '報稱獨立嘅陳振彬'
   tel: ['27630100']
   email: ['hipwo147@yahoo.com.hk']
   addr: ['九龍觀塘協和街147號閣樓']
-  district_alias: ['牛頭角','藍田','秀茂坪']
 '洪錦鉉':
   district: '觀塘'
   desc: '民建聯嘅洪錦鉉'
   tel: ['31628533','81114001','97905645']
   email: ['hungkamin@ymail.com']
   addr: ['九龍觀塘寶達邨達康樓地下C翼17號']
-  district_alias: ['牛頭角','藍田','秀茂坪']
 '陳國華':
   district: '觀塘'
   desc: '民建聯嘅陳國華'
   tel: ['22432830']
   email: ['chankokwah3@yahoo.com.hk']
   addr: ['九龍觀塘牛頭角上邨常興樓1號地下']
-  district_alias: ['牛頭角','藍田','秀茂坪']
 '陳華裕':
   district: '觀塘'
   desc: '報稱獨立嘅陳華裕'
   tel: ['23416398']
   email: ['nchan77@netvigator.com']
   addr: ['觀塘翠屏北邨翠梓樓108B舖']
-  district_alias: ['牛頭角','藍田','秀茂坪']
 '簡銘東':
   district: '觀塘'
   desc: '工聯會嘅簡銘東'
   tel: ['27753800']
   email: ['tungoffice@gmail.com']
   addr: ['九龍藍田啟田邨啟旺樓地下5號室']
-  district_alias: ['牛頭角','藍田','秀茂坪']
 '呂東孩':
   district: '觀塘'
   desc: '報稱獨立嘅呂東孩'
   tel: ['31940122','96777698']
   email: ['luitunghai@yahoo.com.hk']
   addr: ['九龍油塘邨榮塘樓地下15號']
-  district_alias: ['牛頭角','藍田','秀茂坪']
 '柯創盛':
   district: '觀塘'
   desc: '民建聯嘅柯創盛'
   tel: ['23400309']
   email: ['orchongshing@gmail.com']
   addr: ['九龍藍田廣田邨廣逸樓地下4號']
-  district_alias: ['牛頭角','藍田','秀茂坪']
 '蘇麗珍':
   district: '觀塘'
   desc: '報稱獨立嘅蘇麗珍'
   tel: ['25262290','94782290','94432330']
   email: ['ktdcanso@netvigator.com']
   addr: ['九龍觀塘曉麗苑曉麗商場204號']
-  district_alias: ['牛頭角','藍田','秀茂坪']
 '譚肇卓':
   district: '觀塘'
   desc: '民建聯嘅譚肇卓'
   tel: ['23666071','61633802']
   email: ['tamsiucheuk@gmail.com']
   addr: ['九龍牛頭角彩德邨彩信樓地下1號']
-  district_alias: ['牛頭角','藍田','秀茂坪']
 '黃春平':
   district: '觀塘'
   desc: '報稱獨立嘅黃春平'
   tel: ['23400030','98321683']
   email: ['wongchunping@hotmail.com']
   addr: ['九龍觀塘秀茂坪邨秀和樓地下17號']
-  district_alias: ['牛頭角','藍田','秀茂坪']
 '姚柏良':
   district: '觀塘'
   desc: '報稱獨立嘅姚柏良'
   tel: ['39043985','81200149','54890985']
   email: ['perryyiu@yahoo.com']
   addr: ['九龍藍田平田邨平仁樓地下一號']
-  district_alias: ['牛頭角','藍田','秀茂坪']
 '陳偉明':
   district: '深水埗'
   desc: '民建聯嘅陳偉明'
   tel: ['23171833','23879870','23013883','52234544']
   email: ['waimch@hotmail.com']
   addr: ['九龍深水埗元州邨元樂樓地下A2室']
-  district_alias: ['石硤尾','長沙灣','美孚']
 '鄭泳舜':
   district: '深水埗'
   desc: '民建聯嘅鄭泳舜'
   tel: ['23078050','60480241']
   email: ['vincentcheng@dab.org.hk']
   addr: ['深水埗南昌街191號南昌苑1字樓A室']
-  district_alias: ['石硤尾','長沙灣','美孚']
 '林家輝':
   district: '深水埗'
   desc: '經民聯及西九新動力嘅林家輝'
   tel: ['23078815','73938782']
   email: ['aaronlamkafai@yahoo.com.hk']
   addr: ['九龍深水埗麗閣邨麗芙樓地下S14室']
-  district_alias: ['石硤尾','長沙灣','美孚']
 '李詠民':
   district: '深水埗'
   desc: '港九勞工社團聯會嘅李詠民'
   tel: ['27879150','27879162']
   email: ['leewingman@netvigator.com']
   addr: ['深水埗長沙灣道1-5號長勝大廈5字樓F室']
-  district_alias: ['石硤尾','長沙灣','美孚']
 '梁文廣':
   district: '深水埗'
   desc: '經民聯及西九新動力嘅梁文廣'
   tel: ['31576499','95365655']
   email: ['scott@mankwong.info']
   addr: ['九龍深水埗富昌邨富旺樓25號地下']
-  district_alias: ['石硤尾','長沙灣','美孚']
 '黃達東':
   district: '深水埗'
   desc: '民建聯嘅黃達東'
   tel: ['23072777','23701660']
   email: ['ttwong2012@gmail.com']
   addr: ['九龍美孚新邨第四期平台109A舖']
-  district_alias: ['石硤尾','長沙灣','美孚']
 '葉傲冬':
   district: '油尖旺'
   desc: '民建聯嘅葉傲冬'
   tel: ['27355311']
   email: ['ip.ngotung@gmail.com']
   addr: ['九龍佐敦吳松街147號寶業大廈19','樓']
-  district_alias: ['油麻地','尖沙咀','佐敦','旺角']
 '黃舒明':
   district: '油尖旺'
   desc: '西九新動力及經民聯嘅黃舒明'
   tel: ['35419863']
   email: ['mkn_dc@yahoo.com.hk']
   addr: ['九龍旺角彌敦道707-713號銀高國際大廈5字樓A座']
-  district_alias: ['油麻地','尖沙咀','佐敦','旺角']
 '莊永燦':
   district: '油尖旺'
   desc: '西九新動力及經民聯嘅莊永燦'
   tel: ['23983722']
   email: ['francischong123@gmail.com']
   addr: ['九龍旺角西洋菜南街258-260號長寧大廈一樓A室']
-  district_alias: ['油麻地','尖沙咀','佐敦','旺角']
 '鍾港武':
   district: '油尖旺'
   desc: '民建聯嘅鍾港武'
   tel: ['21756811']
   email: ['edmondchung88@yahoo.com.hk']
   addr: ['九龍旺角海泓道富榮花園36號B地鋪']
-  district_alias: ['油麻地','尖沙咀','佐敦','旺角']
 '楊子熙':
   district: '油尖旺'
   desc: '民建聯嘅楊子熙'
   tel: ['27701616']
   email: ['ymt180@yahoo.com.hk']
   addr: ['九龍油麻地眾坊街3號駿發花園第一座地下F舖']
-  district_alias: ['油麻地','尖沙咀','佐敦','旺角']
+'涂謹申':
+  district: '油尖旺'
+  desc: '民主黨嘅涂謹申'
+  tel: ['27899050']
+  email: ['kstooffice@gmail.com']
+  addr: ['九龍大角咀洋松街94-108號德讚中心1樓C10室(信箱:1C)']
 '李德康':
   district: '黃大仙'
   desc: '民建聯嘅李德康'
   tel: ['23239959']
   email: ['litakhongdc@yahoo.com.hk']
   addr: ['九龍黃大仙東頭邨興東樓地下9號']
-  district_alias: ['橫頭磡','竹園','慈雲山']
 '黎榮浩':
   district: '黃大仙'
   desc: '民建聯嘅黎榮浩'
   tel: ['23368192']
   email: ['wangtauhom@dab.org.hk']
   addr: ['九龍黃大仙橫頭磡邨宏顯樓平台104-105室']
-  district_alias: ['橫頭磡','竹園','慈雲山']
 '陳曼琪':
   district: '黃大仙'
   desc: '報稱獨立嘅陳曼琪'
   tel: ['23233707']
   email: ['cmkmaggie2015@gmail.com']
   addr: ['九龍慈雲山慈正邨正德樓地下A翼']
-  district_alias: ['橫頭磡','竹園','慈雲山']
 '何漢文':
   district: '黃大仙'
   desc: '民建聯嘅何漢文'
   tel: ['29975082','29975102','29975162','92333537']
   email: ['hohonman@yahoo.com.hk']
   addr: ['九龍黃大仙慈雲山慈康邨康德樓地下4A-4B室']
-  district_alias: ['橫頭磡','竹園','慈雲山']
 '簡志豪':
   district: '黃大仙'
   desc: '民建聯嘅簡志豪'
   tel: ['23514780','23514771']
   email: ['kanchiho@dab.org.hk']
   addr: ['九龍鑽石山鳳德邨斑鳳樓205室(商場)','九龍黃大仙雙鳯街50-52號成功樓2字樓']
-  district_alias: ['橫頭磡','竹園','慈雲山']
 '林文輝':
   district: '黃大仙'
   desc: '工聯會嘅林文輝'
   tel: ['22164662','55392445']
   email: ['lmfoffice@yahoo.com.hk']
   addr: ['九龍黃大仙上邨逹善樓地下2號']
-  district_alias: ['橫頭磡','竹園','慈雲山']
 '袁國強':
   district: '黃大仙'
   desc: '民建聯嘅袁國強'
   tel: ['27265808','23200499']
   email: ['tszlokest@gmail.com']
   addr: ['九龍慈雲山慈樂邨樂合樓地下12號']
-  district_alias: ['橫頭磡','竹園','慈雲山']
+'胡志偉':
+  district: '黃大仙'
+  desc: '民主黨嘅胡志偉'
+  tel: ['23250763','23250720']
+  email: ['chiwaioffice@gmail.com']
+  addr: ['九龍黃大仙富山邨富信樓地下3E']
 '潘國華':
   district: '九龍城'
   desc: '民建聯嘅潘國華'
   tel: ['23304790']
   email: ['g12hoisham-kln@yahoo.com.hk']
   addr: ['九龍土瓜灣美景街32號安福大廈地下']
-  district_alias: ['紅磡','土瓜灣']
 '左滙雄':
   district: '九龍城'
   desc: '西九新動力及經民聯嘅左滙雄'
   tel: ['27120020','27138313','97910999','61890030']
   email: ['left.hk@gmail.com']
   addr: ['九龍何文田愛民邨昭民樓地下1S1室']
-  district_alias: ['紅磡','土瓜灣']
 '鄭利明':
   district: '九龍城'
   desc: '報稱獨立嘅鄭利明'
   tel: ['27139001','93768112']
   email: ['itlcheng@gmail.com']
   addr: ['九龍窩打老道79B怡安閣地下1A舖']
-  district_alias: ['紅磡','土瓜灣']
 '李慧琼':
   district: '九龍城'
   desc: '民建聯嘅李慧琼'
   tel: ['23303130']
   email: ['leewaikingdc@gmail.com']
   addr: ['九龍土瓜灣浙江街22號同順興大廈地下8號舖']
-  district_alias: ['紅磡','土瓜灣']
 '梁美芬':
   district: '九龍城'
   desc: '西九新動力及經民聯嘅梁美芬'
   tel: ['23344068','34604654']
   email: ['priscillaleungmeifun@yahoo.com.hk']
   addr: ['九龍紅磡紅磡邨紅昇樓高層地下1號室']
-  district_alias: ['紅磡','土瓜灣']
 '陸勁光':
   district: '九龍城'
   desc: '民建聯嘅陸勁光'
   tel: ['22420555','39984924']
   email: ['homtdab@gmail.com']
   addr: ['九龍何文田邨逸文樓地下8室']
-  district_alias: ['紅磡','土瓜灣']
 '吳奮金':
   district: '九龍城'
   desc: '民建聯嘅吳奮金'
   tel: ['27143080','35902035','35902053','96431997','27034368']
   email: ['tonyng2011@gmail.com','oiman@dab.org.hk']
   addr: ['九龍愛民邨德民樓427室']
-  district_alias: ['紅磡','土瓜灣']
 '吳寶強':
   district: '九龍城'
   desc: '民建聯嘅吳寶強'
   tel: ['23656595','23656571','35985343','78888847']
   email: ['ngpokeung22@hotmail.com']
   addr: ['九龍九龍城福佬村道2號C二樓']
-  district_alias: ['紅磡','土瓜灣']
 '楊永杰':
   district: '九龍城'
   desc: '報稱獨立嘅楊永杰'
   tel: ['65852452','65852457']
   email: ['kitsonyang@yahoo.com.hk']
   addr: ['土瓜灣安徽街3號嘉信大廈2樓2至3室']
-  district_alias: ['紅磡','土瓜灣']
+'梁美芬':
+  district: '九龍城'
+  desc: '西九新動力及經民聯嘅梁美芬'
+  tel: ['23344068','34604654']
+  email: ['priscillaleungmeifun@yahoo.com.hk']
+  addr: ['九龍紅磡紅磡邨紅昇樓高層地下1號室']
+'李慧琼':
+  district: '九龍城'
+  desc: '民建聯嘅李慧琼'
+  tel: ['23303130']
+  email: ['leewaikingdc@gmail.com']
+  addr: ['九龍土瓜灣浙江街22號同順興大廈地下8號舖']
 '周玉堂':
   district: '離島'
   desc: '報稱獨立嘅周玉堂'
   tel: ['29828513']
   email: ['chowyuktongmh@yahoo.com.hk']
   addr: ['南丫島南段索罟灣第二街1B2樓南丫島南段鄉事委員會']
-  district_alias: ['大嶼山','東涌']
 '余漢坤':
   district: '離島'
   desc: '報稱獨立嘅余漢坤'
   tel: ['29847633','29847656']
   email: ['lantaurandy@gmail.com']
   addr: ['大嶼山梅窩銀灣邨銀日樓123室']
-  district_alias: ['大嶼山','東涌']
 '李桂珍':
   district: '離島'
   desc: '民建聯嘅李桂珍'
   tel: ['29818499']
   email: ['lkco2000@netvigator.com']
   addr: ['長洲新興街9號地下']
-  district_alias: ['大嶼山','東涌']
 '劉焯榮':
   district: '離島'
   desc: '報稱獨立嘅劉焯榮'
   tel: ['29857338']
   email: ['loucheukwing@yahoo.com.hk']
   addr: ['大嶼山大澳街市街29號大澳鄉事委員會']
-  district_alias: ['大嶼山','東涌']
 '鄧家彪':
   district: '離島'
   desc: '工聯會嘅鄧家彪'
   tel: ['22417058']
   email: ['ftu.tkbill@gmail.com']
   addr: ['大嶼山東涌逸東邨勤逸樓地下B翼']
-  district_alias: ['大嶼山','東涌']
 '黃漢權':
   district: '離島'
   desc: '報稱獨立嘅黃漢權'
   tel: ['29830790']
   email: ['pcrchkwong@yahoo.com']
   addr: ['坪洲永安街69號A地下坪洲鄉事委員會']
-  district_alias: ['大嶼山','東涌']
 '黃文漢':
   district: '離島'
   desc: '報稱獨立嘅黃文漢'
   tel: ['29848473']
   email: ['muiworc@gmail.com']
   addr: ['大嶼山梅窩鄉事會路45號梅窩鄉事委員會']
-  district_alias: ['大嶼山','東涌']
 '翁志明':
   district: '離島'
   desc: '報稱獨立嘅翁志明'
   tel: ['29812329','29810350']
   email: ['']
   addr: ['長洲教堂路2號長洲鄉事委員會']
-  district_alias: ['大嶼山','東涌']
+'周浩鼎':
+  district: '離島'
+  desc: '民建聯嘅周浩鼎'
+  tel: ['21093990']
+  email: ['holdenchow@hotmail.com.hk']
+  addr: ['大嶼山東涌富東邨東馬樓地下2室']
 '鍾偉平':
   district: '荃灣'
   desc: '報稱獨立嘅鍾偉平'
   tel: ['24922444']
   email: ['']
   addr: ['新界荃灣沙咀道277號二樓']
-  district_alias: ['油柑頭','荃景圍']
 '黃偉傑':
   district: '荃灣'
   desc: '報稱獨立嘅黃偉傑'
   tel: ['31055626','21519372','81010555','67709883']
   email: ['marclus_wong@graduate.hku.hk']
   addr: ['新界荃灣麗城薈二期227B號舖']
-  district_alias: ['油柑頭','荃景圍']
 '陳振中':
   district: '荃灣'
   desc: '民建聯嘅陳振中'
   tel: ['94902700']
   email: ['joneschan.office@gmail.com']
   addr: ['新界荃灣石圍角邨石菊樓地下18號']
-  district_alias: ['油柑頭','荃景圍']
 '陳恒鑌':
   district: '荃灣'
   desc: '民建聯嘅陳恒鑌'
   tel: ['24199387','92747035']
   email: ['benchanlegco@gmail.com']
   addr: ['新界荃灣沙咀道362號全發商業大廈G58號新界荃灣沙咀道362號全發商業大廈2202室']
-  district_alias: ['油柑頭','荃景圍']
 '陳崇業':
   district: '荃灣'
   desc: '報稱獨立嘅陳崇業'
   tel: ['29865226']
   email: ['']
   addr: ['新界馬灣鄉事會路一號馬灣鄉事委員會新大樓馬灣鄉事委員會']
-  district_alias: ['油柑頭','荃景圍']
 '古揚邦':
   district: '荃灣'
   desc: '民建聯嘅古揚邦'
   tel: ['24159097','90834477','66544477','91878713']
   email: ['ypkoo007@gmail.com']
   addr: ['新界荃灣沙咀道113號好運樓二樓']
-  district_alias: ['油柑頭','荃景圍']
 '林發耿':
   district: '荃灣'
   desc: '報稱獨立嘅林發耿'
   tel: ['24903381','94665856']
   email: ['twfklam@netvigator.com']
   addr: ['新界荃灣綠楊新邨平台林發耿議員辦事處']
-  district_alias: ['油柑頭','荃景圍']
 '羅少傑':
   district: '荃灣'
   desc: '報稱獨立嘅羅少傑'
   tel: ['24459777','24459771','24459772','97239777']
   email: ['info@peterlo.hk']
   addr: ['新界荃灣大河道7號慶興樓3樓4室']
-  district_alias: ['油柑頭','荃景圍']
 '文裕明':
   district: '荃灣'
   desc: '新界社團聯會及公屋聯會嘅文裕明'
   tel: ['24022252']
   email: ['']
   addr: ['新界荃灣石圍角邨石蓮樓150號地下']
-  district_alias: ['油柑頭','荃景圍']
+'田北辰':
+  district: '荃灣'
+  desc: '新民黨嘅田北辰'
+  tel: ['29448181','29448282']
+  email: ['mt@michaeltien.hk']
+  addr: ['新界荃灣青山公路398號愉景新城商場第一層1067號舖']
 '沈豪傑':
   district: '元朗'
   desc: '報稱獨立嘅沈豪傑'
   tel: ['24783316','52235793']
   email: ['wilshum.dc@gmail.com']
   addr: ['新界元朗鳳群街11-15號萬豐大廈地下27&86號舖']
-  district_alias: ['天水圍','流浮山']
 '湛家雄':
   district: '元朗'
   desc: '報稱獨立嘅湛家雄'
   tel: ['21211616','82388899']
   email: ['danielcham@on-nets.com']
   addr: ['新界元朗天水圍置富嘉湖二期一樓131A舖']
-  district_alias: ['天水圍','流浮山']
 '程振明':
   district: '元朗'
   desc: '報稱獨立嘅程振明'
   tel: ['24751009']
   email: ['ching163163@netvigator.com']
   addr: ['元朗大棠路崇正新村163號']
-  district_alias: ['天水圍','流浮山']
 '趙秀嫻':
   district: '元朗'
   desc: '報稱獨立嘅趙秀嫻'
   tel: ['31479017','31479018']
   email: ['shchiu2004@yahoo.com.hk']
   addr: ['元朗天水圍天悅邨悅富樓C翼地下']
-  district_alias: ['天水圍','流浮山']
 '黎偉雄':
   district: '元朗'
   desc: '報稱獨立嘅黎偉雄'
   tel: ['24780670']
   email: ['contactus@laiwaihung.org']
   addr: ['元朗壽富街55號元朗中心805室']
-  district_alias: ['天水圍','流浮山']
 '李月民':
   district: '元朗'
   desc: '報稱獨立嘅李月民'
   tel: ['21211618']
   email: ['leeyuetman@biznetvigator.com']
   addr: ['新界元朗天水圍置富嘉湖二期一樓131B舖']
-  district_alias: ['天水圍','流浮山']
 '梁志祥':
   district: '元朗'
   desc: '民建聯嘅梁志祥'
   tel: ['24421366','26160523','26160524','90168088']
   email: ['tinshuiw@netvigator.com']
   addr: ['元朗天水圍天耀邨耀隆樓地下A翼2號']
-  district_alias: ['天水圍','流浮山']
 '梁福元':
   district: '元朗'
   desc: '報稱獨立嘅梁福元'
   tel: ['24700824']
   email: ['fukyuenleung@yahoo.com.hk']
   addr: ['元朗大棠山道11號']
-  district_alias: ['天水圍','流浮山']
 '呂堅':
   district: '元朗'
   desc: '民建聯嘅呂堅'
   tel: ['29447298','29441538']
   email: ['clementlui@yahoo.com']
   addr: ['元朗青山道96號恆隆大廈201室']
-  district_alias: ['天水圍','流浮山']
 '文光明':
   district: '元朗'
   desc: '報稱獨立嘅文光明'
   tel: ['24711101','53668445','24711271','61837470']
   email: ['yldc.mankm@yahoo.com.hk']
   addr: ['新界元朗新田大馬路6號C室地下']
-  district_alias: ['天水圍','流浮山']
 '蕭浪鳴':
   district: '元朗'
   desc: '民建聯嘅蕭浪鳴'
   tel: ['35200616','60276788']
   email: ['siu60276788@yahoo.com.hk']
   addr: ['元朗安寧路53號吉祥樓二樓B2室']
-  district_alias: ['天水圍','流浮山']
 '鄧賀年':
   district: '元朗'
   desc: '報稱獨立嘅鄧賀年'
   tel: ['23826363','96823263']
   email: ['tanghonin2007@yahoo.com.hk']
   addr: ['元朗錦田錦田公路錦田戲院大廈二樓D1室']
-  district_alias: ['天水圍','流浮山']
 '鄧家良':
   district: '元朗'
   desc: '報稱獨立嘅鄧家良'
   tel: ['24722292']
   email: ['tangkaleung2003@yahoo.com.hk']
   addr: ['新界元朗洪水橋田心路17B號地下']
-  district_alias: ['天水圍','流浮山']
 '鄧勵東':
   district: '元朗'
   desc: '報稱獨立嘅鄧勵東'
   tel: ['24478118']
   email: ['tanglaitung@gmail.com']
   addr: ['元朗廈村鄉廈尾路六十號廈村鄉鄉事委員會']
-  district_alias: ['天水圍','流浮山']
 '曾樹和':
   district: '元朗'
   desc: '報稱獨立嘅曾樹和'
   tel: ['24755778']
   email: ['tsangshuwo2011@yahoo.com.hk']
   addr: ['元朗安寧路139-147號2樓']
-  district_alias: ['天水圍','流浮山']
 '黃卓健':
   district: '元朗'
   desc: '新民黨嘅黃卓健'
   tel: ['22531316','22531317','98811628','54343567']
   email: ['legwarddc@gmail.com']
   addr: ['新界天水圍天華邨獨立單位1號地下單位編號1']
-  district_alias: ['天水圍','流浮山']
 '姚國威':
   district: '元朗'
   desc: '工聯會嘅姚國威'
   tel: ['63854116','93435749']
   email: ['dcykw@yahoo.com.hk']
   addr: ['元朗天水圍俊宏軒第九座地下']
-  district_alias: ['天水圍','流浮山']
+'梁志祥':
+  district: '元朗'
+  desc: '民建聯嘅梁志祥'
+  tel: ['24421366','26160523','26160524','90168088']
+  email: ['tinshuiw@netvigator.com']
+  addr: ['元朗天水圍天耀邨耀隆樓地下A翼2號']
+'鄺俊宇':
+  district: '元朗'
+  desc: '民主黨嘅鄺俊宇'
+  tel: ['37499056','37499055','35251359']
+  email: ['roy@dphk.org']
+  addr: ['元朗朗屏邨寶屏樓地下102室']
 '蘇西智':
   district: '北區'
   desc: '民建聯嘅蘇西智'
   tel: ['26683832','26725588']
   email: ['sosaichi@yahoo.com.hk']
   addr: ['新界上水彩園邨彩華樓3樓333室']
-  district_alias: ['上水','粉嶺','沙頭角']
 '李國鳳':
   district: '北區'
   desc: '報稱獨立嘅李國鳳'
   tel: ['26755277']
   email: ['kfli_frc@yahoo.com.hk']
   addr: ['新界粉嶺聯和墟聯發街3號地下粉嶺區鄉事委員會']
-  district_alias: ['上水','粉嶺','沙頭角']
 '李冠洪':
   district: '北區'
   desc: '報稱獨立嘅李冠洪'
   tel: ['26559122']
   email: ['stkrc.lkh@gmail.com']
   addr: ['新界沙頭角沙頭角道沙頭角區鄉事委員會']
-  district_alias: ['上水','粉嶺','沙頭角']
 '侯志強':
   district: '北區'
   desc: '報稱獨立嘅侯志強'
   tel: ['26700292']
   email: ['ssdrc8@yahoo.com.hk']
   addr: ['新界上水寶運路3號地下']
-  district_alias: ['上水','粉嶺','沙頭角']
 '姚銘':
   district: '北區'
   desc: '民建聯及新界社團聯會嘅姚銘'
   tel: ['26766878','26763388']
   email: ['yiuming_office@yahoo.com.hk']
   addr: ['新界粉嶺華心邨華勉樓對出地下2號']
-  district_alias: ['上水','粉嶺','沙頭角']
 '陳崇輝':
   district: '北區'
   desc: '報稱獨立嘅陳崇輝'
   tel: ['26740519','69391780']
   email: ['takwuling@yahoo.com.hk']
   addr: ['新界打鼓嶺坪輋路198號打鼓嶺區鄉事委員會']
-  district_alias: ['上水','粉嶺','沙頭角']
 '黃宏滔':
   district: '北區'
   desc: '工聯會嘅黃宏滔'
   tel: ['26689210','26723339','26726830','26726930']
   email: ['wwt_office@yahoo.com.hk']
   addr: ['新界上水天平邨天祥樓地下101室']
-  district_alias: ['上水','粉嶺','沙頭角']
 '溫和輝':
   district: '北區'
   desc: '民建聯嘅溫和輝'
   tel: ['26597322']
   email: ['wf_wan@yahoo.com.hk']
   addr: ['新界沙頭角順隆街3號錦和樓A座地下']
-  district_alias: ['上水','粉嶺','沙頭角']
 '藍偉良':
   district: '北區'
   desc: '報稱獨立嘅藍偉良'
   tel: ['26635151','26635156','81033973']
   email: ['wllarm@yahoo.com.hk']
   addr: ['新界上水清河邨清澤樓地下G18室']
-  district_alias: ['上水','粉嶺','沙頭角']
+'林卓廷':
+  district: '北區'
+  desc: '民主黨嘅林卓廷'
+  tel: ['26500040','26500044','26500090','26500738']
+  email: ['ssoffice@dphk.org']
+  addr: ['新界上水石湖墟新康街12號閣樓']
+'劉國勳':
+  district: '北區'
+  desc: '民建聯嘅劉國勳'
+  tel: ['26826623','97827408']
+  email: ['lkf.north@gmail.com','lkf_ed@yahoo.com.hk']
+  addr: ['新界粉嶺雍盛苑雍華閣地下1室']
 '彭長緯':
   district: '沙田'
   desc: '民建聯嘅彭長緯'
   tel: ['26030788','23862418','93600069','62110340','21585302']
   email: ['pangcwoffice@yahoo.com.hk','pangcw@yahoo.com.hk','shatin@dab.org.hk']
   addr: ['沙田上禾輋路1號沙田政府合署4樓沙田區議會秘書處沙田穗禾商場G23']
-  district_alias: ['大圍','馬鞍山','第一城']
 '陳敏娟':
   district: '沙田'
   desc: '公民力量及新民黨嘅陳敏娟'
   tel: ['26461870','96549770','68566225']
   email: ['chanmankuen.office@gmail.com']
   addr: ['沙田廣源邨廣棉樓地下13號']
-  district_alias: ['大圍','馬鞍山','第一城']
 '招文亮':
   district: '沙田'
   desc: '民建聯嘅招文亮'
   tel: ['28650989','35231055','52666865']
   email: ['alvinchiu@moscommunity.hk']
   addr: ['馬鞍山欣安邨欣悅樓地下DB01室']
-  district_alias: ['大圍','馬鞍山','第一城']
 '李子榮':
   district: '沙田'
   desc: '報稱獨立嘅李子榮'
   tel: ['26303843','92208236']
   email: ['alvincwlee@gmail.com']
   addr: ['新界沙田馬鞍山富輝花園商場一樓29號鋪']
-  district_alias: ['大圍','馬鞍山','第一城']
 '梁家輝':
   district: '沙田'
   desc: '公民力量及新民黨嘅梁家輝'
   tel: ['26479997','26498777','67302007']
   email: ['kafai_2007@yahoo.com.hk']
   addr: ['沙田愉田苑平台商場8號鋪新界沙田第一城23座地下F2舖']
-  district_alias: ['大圍','馬鞍山','第一城']
 '李世榮':
   district: '沙田'
   desc: '民建聯及新界社團聯會嘅李世榮'
   tel: ['26331600']
   email: ['stanley0812@gmail.com']
   addr: ['沙田馬鞍山耀安邨耀和樓235室']
-  district_alias: ['大圍','馬鞍山','第一城']
 '莫錦貴':
   district: '沙田'
   desc: '新界鄉議局及經民聯嘅莫錦貴'
   tel: ['26093199','93887716','69997965']
   email: ['dckkmok@yahoo.com.hk']
   addr: ['沙田排頭街13號']
-  district_alias: ['大圍','馬鞍山','第一城']
 '潘國山':
   district: '沙田'
   desc: '公民力量及新民黨嘅潘國山'
   tel: ['26948666','69213246']
   email: ['pgs_sam@yahoo.com.hk']
   addr: ['沙田隆亨邨榮心樓102號地下']
-  district_alias: ['大圍','馬鞍山','第一城']
 '吳仕福':
   district: '西貢'
   desc: '民建聯嘅吳仕福'
   tel: ['27910211','27920088']
   email: ['ngszefuk@gmail.com']
   addr: ['西貢德隆前街14號地下']
-  district_alias: ['將軍澳']
 '成漢强':
   district: '西貢'
   desc: '報稱獨立嘅成漢强'
   tel: ['27196619','91032273']
   email: ['hksing_office@yahoo.com.hk']
   addr: ['九龍清水灣坑口道壹號A']
-  district_alias: ['將軍澳']
 '陳繼偉':
   district: '西貢'
   desc: '報稱獨立嘅陳繼偉'
   tel: ['34223655','69783033','82088393','51262200']
   email: ['ckwchapman@yahoo.com.hk']
   addr: ['將軍澳健明邨健暉樓地下一號']
-  district_alias: ['將軍澳']
 '陳博智':
   district: '西貢'
   desc: '民建聯嘅陳博智'
   tel: ['68257759','27193877']
   email: ['chanpokchioffice@gmail.com']
   addr: ['將軍澳厚德邨德澤樓地下25號']
-  district_alias: ['將軍澳']
 '莊元苳':
   district: '西貢'
   desc: '民建聯嘅莊元苳'
   tel: ['21780890','61882653']
   email: ['kennychong@dab.org.hk']
   addr: ['將軍澳廣明苑廣瑞閣地下B1室']
-  district_alias: ['將軍澳']
 '劉偉章':
   district: '西貢'
   desc: '報稱獨立嘅劉偉章'
   tel: ['27196082','91030683']
   email: ['lauwaicheung2003@yahoo.com.hk']
   addr: ['九龍清水灣坑口道一號B']
-  district_alias: ['將軍澳']
 '凌文海':
   district: '西貢'
   desc: '民建聯嘅凌文海'
   tel: ['26236008']
   email: ['lingmanhoi@yahoo.com.hk']
   addr: ['將軍澳厚德邨德安樓地下10號']
-  district_alias: ['將軍澳']
 '温悅昌':
   district: '西貢'
   desc: '公民力量，新民黨嘅温悅昌'
   tel: ['26236969','96538395']
   email: ['ycwanoffice@yahoo.com.hk']
   addr: ['將軍澳明德邨商場地下21號']
-  district_alias: ['將軍澳']
 '王水生':
   district: '西貢'
   desc: '報稱獨立嘅王水生'
   tel: ['27923227','27921956']
   email: ['shuisangwong@yahoo.com.hk']
   addr: ['西貢鄉事會里一號']
-  district_alias: ['將軍澳']
 '羅競成':
   district: '葵青'
   desc: '民建聯嘅羅競成'
   tel: ['36919766','90913615']
   email: ['lawks.office@gmail.com']
   addr: ['青衣長安邨安清樓地下102A室']
-  district_alias: ['葵涌','青衣']
 '林翠玲':
   district: '葵青'
   desc: '報稱獨立嘅林翠玲'
   tel: ['24221212','24354911','97222301']
   email: ['lam_101_office@yahoo.com.hk']
   addr: ['新界青衣長發邨亮發樓地下101室']
-  district_alias: ['葵涌','青衣']
 '李志強':
   district: '葵青'
   desc: '經民聯嘅李志強'
   tel: ['24360616','97113363','51812234']
   email: ['leeckoffice@yahoo.com.hk']
   addr: ['青衣長青邨青榕樓126室']
-  district_alias: ['葵涌','青衣']
 '梁子穎':
   district: '葵青'
   desc: '工聯會嘅梁子穎'
   tel: ['24277689','24270689','93734249']
   email: ['ktdc.dennisleung@gmail.com']
   addr: ['葵涌安蔭邨德蔭樓附翼地下1室']
-  district_alias: ['葵涌','青衣']
 '梁偉文':
   district: '葵青'
   desc: '民建聯嘅梁偉文'
   tel: ['24342342','93024192']
   email: ['leung_wai_man_mh@yahoo.com.hk']
   addr: ['青衣長康邨康美樓C307室']
-  district_alias: ['葵涌','青衣']
 '潘志成':
   district: '葵青'
   desc: '民建聯嘅潘志成'
   tel: ['36902948','36908297','66249290']
   email: ['ktdcpcshing@gmail.com']
   addr: ['青衣長宏邨宏善樓地下C翼']
-  district_alias: ['葵涌','青衣']
 '譚惠珍':
   district: '葵青'
   desc: '經民聯嘅譚惠珍'
   tel: ['24329739','94091818']
   email: ['tamwaichun1@netvigator.com']
   addr: ['青衣長安邨安湖樓平台308A室']
-  district_alias: ['葵涌','青衣']
 '鄧瑞華':
   district: '葵青'
   desc: '報稱獨立嘅鄧瑞華'
   tel: ['24333799','24957972','54057828','31580556','90186351']
   email: ['']
   addr: ['青衣清心街1號2樓(青衣四村管理委員會)葵涌石籬(一)邨石安樓C翼地下1號']
-  district_alias: ['葵涌','青衣']
 '徐曉杰':
   district: '葵青'
   desc: '新民黨嘅徐曉杰'
   tel: ['24338144','24349199','24363306','24350266','97299822']
   email: ['tsuihiukit@yahoo.com.hk']
   addr: ['青衣長康邨康榮樓14號地下']
-  district_alias: ['葵涌','青衣']
+'麥美娟':
+  district: '葵青'
+  desc: '工聯會嘅麥美娟'
+  tel: ['24355991','31716938']
+  email: ['alicemakoffice@gmail.com']
+  addr: ['青衣長亨邨亨俊樓地下3號']
+'梁耀忠':
+  district: '葵青'
+  desc: '街工嘅梁耀忠'
+  tel: ['24100360']
+  email: ['nwsclycoffice@gmail.com']
+  addr: ['葵涌葵芳邨葵仁樓8號地下']
 '張學明':
   district: '大埔'
   desc: '民建聯嘅張學明'
   tel: ['26562330']
   email: ['hokming_cheung@yahoo.com.hk','tpdcch@tpdc.had.gov.hk']
   addr: ['新界大埔寶鄉街1號寶鄉邨G01室']
-  district_alias: ['大埔墟','太和']
 '黃碧嬌':
   district: '大埔'
   desc: '民建聯嘅黃碧嬌'
   tel: ['26583433','26582294']
   email: ['p09_peggy@yahoo.com.hk','tpdcvich@tpdc.had.gov.hk']
   addr: ['新界大埔廣福邨廣平樓平台224室']
-  district_alias: ['大埔墟','太和']
 '陳灶良':
   district: '大埔'
   desc: '經民聯嘅陳灶良'
   tel: ['26530920','26530910']
   email: ['chancholeung@yahoo.com.hk']
   addr: ['新界大埔富善街2-4號3樓']
-  district_alias: ['大埔墟','太和']
 '陳笑權':
   district: '大埔'
   desc: '報稱獨立嘅陳笑權'
   tel: ['26387868','26382166','96276861','91036880']
   email: ['chan0001@netvigator.com']
   addr: ['新界大埔靖遠街5號靖安樓2樓']
-  district_alias: ['大埔墟','太和']
 '李耀斌':
   district: '大埔'
   desc: '報稱獨立嘅李耀斌'
   tel: ['26564466']
   email: ['sknrc3621@hotmail.com','sknrc4466@yahoo.com.hk']
   addr: ['新界大埔仁興街人和里2號2樓']
-  district_alias: ['大埔墟','太和']
 '譚榮勳':
   district: '大埔'
   desc: '民建聯嘅譚榮勳'
   tel: ['91443844','94139000','26632238']
   email: ['erictam@erictam.org']
   addr: ['新界大埔頌雅苑頌善閣地下B1室新界大埔安慈路4號昌運中心商場1樓119B鋪']
-  district_alias: ['大埔墟','太和']
 '余智榮':
   district: '大埔'
   desc: '報稱獨立嘅余智榮'
   tel: ['26310333','26380530','63338844','90619909','92554422','65676818','53018998']
   email: ['kenyuoffice@gmail.com']
   addr: ['新界大埔運頭塘邨運臨樓地下4A室']
-  district_alias: ['大埔墟','太和']
 '梁健文':
   district: '屯門'
   desc: '民建聯嘅梁健文'
   tel: ['24560662','92622836','61396707']
   email: ['kinmanleung@yahoo.com.hk']
   addr: ['屯門湖景邨湖畔樓地下10號']
-  district_alias: ['黃金海岸','龍鼓灘']
 '李洪森':
   district: '屯門'
   desc: '工聯會嘅李洪森'
   tel: ['24558668','24531889','24558686','94635353','53604901']
   email: ['leehs@netvigator.com']
   addr: ['屯門田景邨田樂樓地下28號']
-  district_alias: ['黃金海岸','龍鼓灘']
 '歐志遠':
   district: '屯門'
   desc: '報稱獨立嘅歐志遠'
   tel: ['34890913','27113331','27113571']
   email: ['auchiyuen@ymail.com','info@auchiyuen.org']
   addr: ['屯門屯喜路2號屯門栢麗廣場1516室']
-  district_alias: ['黃金海岸','龍鼓灘']
 '陳有海':
   district: '屯門'
   desc: '工聯會嘅陳有海'
   tel: ['24655140','92623728']
   email: ['dahktct@hotmail.com']
   addr: ['屯門大興邨興輝樓19號地下']
-  district_alias: ['黃金海岸','龍鼓灘']
 '張恒輝':
   district: '屯門'
   desc: '民建聯嘅張恒輝'
   tel: ['24578118','24575995','90120131']
   email: ['cheunghangfaidc@biznetvigator.com']
   addr: ['屯門湖秀街2號悅湖山莊商場128號']
-  district_alias: ['黃金海岸','龍鼓灘']
 '何君堯':
   district: '屯門'
   desc: '報稱獨立嘅何君堯'
   tel: ['28057389','28057390','28051118','28051238']
   email: ['juniusdc@kcho-fong.com']
   addr: ['屯門湖翠路2號美樂花園39號鋪地下','新界屯門良田村77號地下']
-  district_alias: ['黃金海岸','龍鼓灘']
 '劉業強':
   district: '屯門'
   desc: '經民聯嘅劉業強'
   tel: ['24572822']
   email: ['lauipkeung@gmail.com']
   addr: ['新界屯門海榮路22號屯門中央廣場20樓']
-  district_alias: ['黃金海岸','龍鼓灘']
 '蘇炤成':
   district: '屯門'
   desc: '新民黨嘅蘇炤成'
   tel: ['24517778']
   email: ['soshiushing@yahoo.com.hk']
   addr: ['屯門三聖邨進漁樓地下29號']
-  district_alias: ['黃金海岸','龍鼓灘']
 '陶錫源':
   district: '屯門'
   desc: '報稱獨立嘅陶錫源'
   tel: ['24402968','54037806','90903513']
   email: ['tmsyto@yahoo.com.hk']
   addr: ['屯門藍地大街37號地下','屯門青賢街1號屯門鄉事委員會行政大廈2樓']
-  district_alias: ['黃金海岸','龍鼓灘']
 '徐帆':
   district: '屯門'
   desc: '工聯會嘅徐帆'
   tel: ['24655140','92825538']
   email: ['simontsuitm@gmail.com']
   addr: ['屯門大興邨興輝樓18號地下']
-  district_alias: ['黃金海岸','龍鼓灘']
+'何君堯':
+  district: '屯門'
+  desc: '報稱獨立嘅何君堯'
+  tel: ['28057389','28057390','28051118','28051238']
+  email: ['juniusdc@kcho-fong.com']
+  addr: ['屯門湖翠路2號美樂花園39號鋪地下','新界屯門良田村77號地下']
