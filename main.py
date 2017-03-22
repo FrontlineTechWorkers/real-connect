@@ -213,7 +213,7 @@ def recognize():
 @app.route('/goodbye', methods=['POST'])
 def goodbye():
     status = request.form['DialCallStatus']
-    duration = request.form['DialCallDuration']
+    duration = request.form.get('DialCallDuration', '0')
     app.logger.info("evt=dial_end sid=%s status=%s duration=%s", request.form['CallSid'], status, duration)
     r = twiml.Response()
     r.hangup()
