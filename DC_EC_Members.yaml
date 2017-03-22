@@ -40,12 +40,6 @@
   tel: ['34892064','97226032']
   email: ['huichifung@gmail.com ']
   addr: ['香港中環閣麟街10-16號致發大廈703室']
-'張國鈞':
-  district: '中西區'
-  desc: '民建聯嘅張國鈞'
-  tel: ['28720177','28720077','63530173']
-  email: ['dabcw.h.cheung@gmail.com']
-  addr: ['香港西環山市街2號B1舖']
 '吳錦津':
   district: '灣仔'
   desc: '報稱獨立嘅吳錦津'
@@ -424,18 +418,6 @@
   tel: ['65852452','65852457']
   email: ['kitsonyang@yahoo.com.hk']
   addr: ['土瓜灣安徽街3號嘉信大廈2樓2至3室']
-'梁美芬':
-  district: '九龍城'
-  desc: '西九新動力及經民聯嘅梁美芬'
-  tel: ['23344068','34604654']
-  email: ['priscillaleungmeifun@yahoo.com.hk']
-  addr: ['九龍紅磡紅磡邨紅昇樓高層地下1號室']
-'李慧琼':
-  district: '九龍城'
-  desc: '民建聯嘅李慧琼'
-  tel: ['23303130']
-  email: ['leewaikingdc@gmail.com']
-  addr: ['九龍土瓜灣浙江街22號同順興大廈地下8號舖']
 '周玉堂':
   district: '離島'
   desc: '報稱獨立嘅周玉堂'
@@ -652,12 +634,6 @@
   tel: ['63854116','93435749']
   email: ['dcykw@yahoo.com.hk']
   addr: ['元朗天水圍俊宏軒第九座地下']
-'梁志祥':
-  district: '元朗'
-  desc: '民建聯嘅梁志祥'
-  tel: ['24421366','26160523','26160524','90168088']
-  email: ['tinshuiw@netvigator.com']
-  addr: ['元朗天水圍天耀邨耀隆樓地下A翼2號']
 '鄺俊宇':
   district: '元朗'
   desc: '民主黨嘅鄺俊宇'
@@ -1000,9 +976,3 @@
   tel: ['24655140','92825538']
   email: ['simontsuitm@gmail.com']
   addr: ['屯門大興邨興輝樓18號地下']
-'何君堯':
-  district: '屯門'
-  desc: '報稱獨立嘅何君堯'
-  tel: ['28057389','28057390','28051118','28051238']
-  email: ['juniusdc@kcho-fong.com']
-  addr: ['屯門湖翠路2號美樂花園39號鋪地下','新界屯門良田村77號地下']
