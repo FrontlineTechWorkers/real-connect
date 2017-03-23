@@ -3,7 +3,7 @@ env: flex
 entrypoint: gunicorn -b :$PORT main:app
 
 automatic_scaling:
-    min_num_instances: 3
+    min_num_instances: 2
 
 # INSERT YOUR SECRETS BELOW
 
