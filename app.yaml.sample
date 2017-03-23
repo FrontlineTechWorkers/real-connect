@@ -1,6 +1,6 @@
 runtime: python
 env: flex
-entrypoint: gunicorn -b :$PORT main:app
+entrypoint: gunicorn -w 4 -b :$PORT main:app
 
 automatic_scaling:
     min_num_instances: 2
