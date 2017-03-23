@@ -1,5 +1,8 @@
-# real-connect
+# 真・WeConnect [![Build Status](https://travis-ci.org/FrontlineTechWorkers/real-connect.svg?branch=master)](https://travis-ci.org/FrontlineTechWorkers/real-connect)
 
+Developed by [前線科技人員](https://www.facebook.com/FrontlineTechWorkersConcernGroup/photos/a.907682852604782.1073741829.907020282671039/1450926928280369/)
+
+> 今個星期日就係特首選舉，部分區議員身兼選委所以會有份投票。區議員嘅職責之一係聽市民意見，咁到底佢地會唔會投你想投個位呢？即刻打 5819 2689，講出你住係邊區，語音辨識系統就會幫你搵出你嗰區有邊個區議員係選委，再將你嘅電話駁去佢個度，等你親自問下佢、同佢傾下啦。
 
 ## Setup
 
